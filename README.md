@@ -9,4 +9,4 @@ Project 3: Investigating photovoltaic solar power output forecasting using machi
 
 Project 4: Predicting streamflow in Peninsular Malaysia using support vector machine and deep learning algorithms (2022)
 
-Project 5: Predicting suspended sediment load in Peninsular Malaysia using support vector machine and deep learning algorithms
+Project 5: Predicting suspended sediment load in Peninsular Malaysia using support vector machine and deep learning algorithms (2022)
