@@ -3,15 +3,25 @@ title: "Yusuf's Data Science & Machine Learning Portfolio"
 layout: default
 ---
 
-Welcome to my portfolio of **data science and machine learning projects**, developed through academic research, university collaborations, and personal exploration. These projects showcase my strengths in **data analysis**, **feature engineering**, and **machine learning modeling** applied to real-world problems in environmental and AI domains.
+## 👋 Introduction
+
+Welcome, and thank you for stopping by my data science and machine learning portfolio.  
+I'm Yusuf, and this space brings together projects I've worked on through academic research, collaborations with universities, and self-guided learning.
+
+These projects reflect my experience working with real-world data, where I've applied data science and machine learning techniques like statistical analysis, regression modelling, time series forecasting, to uncover useful insights. While much of my work has been shaped by research-driven challenges, I've also taken the initiative to explore ideas independently and build out complete workflows from data preparation to model evaluation.
+
+My background so far has been focused mostly on academic and research settings, but the skills I've developed are relevant to many areas where data plays a central role. I'm always looking to expand into new problem spaces and continue learning through hands-on work.
+
+---
 
 ## 🔍 What You'll Find Here
 
-- Applied machine learning projects grounded in research and analytics  
-- Collaborations with universities and research teams  
-- Work focused on forecasting, prediction, and model evaluation  
+- A set of machine learning and analytics projects, with a focus on time series forecasting and regression modeling   
+- Projects built through both collaborative research and independent study  
+- Clear, well-structured summaries that explain the thinking behind each project  
+- Code and documentation that aim to be understandable for both technical and non-technical readers
 
----
+Thanks again for visiting, and I hope you find something here that interests you.
 
 ## 🗂️ Project Index
 
