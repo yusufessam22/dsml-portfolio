@@ -42,97 +42,154 @@ Click a project to jump to its section:
 ## Rain-Net: Daily Rainfall Forecasting (2025 - ongoing)
 
 ### 🔍 Overview
-Rain-Net is an ongoing research collaboration with Sunway University focused on forecasting daily rainfall using machine learning. Due to confidentiality, only selected aspects of the project can be shared.
 
-The data used comes from an undisclosed rainfall station in Malaysia. It is a univariate time series containing just one feature: daily rainfall values. The dataset is relatively small, with only a few thousand rows. This poses a major challenge, as reliable forecasting typically requires rich historical data. However, this is representative of many real-world locations where rainfall monitoring is needed but data is limited.
+Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here.
 
-The goal of this project is to design a machine learning framework capable of producing useful and actionable rainfall forecasts, even under such constraints.
+- Objective: Forecast daily rainfall using data from an undisclosed station in Malaysia
+- Dataset:
+  - A relatively small dataset with just a few thousand daily rainfall observations.
+  - Univariate: only feature is daily rainfall
+- Problem characteristics:
+  - Heavy zero-inflation: most days have 0mm rainfall
+  - Occasional extreme events: >200-300mm, up to over 400mm
+  - Data sparsity: a limited dataset makes learning challenging
+- Real-world relevance: Mimics situations where stations lack sufficient historical data, yet forecasting remains crucial (e.g. flood/drought preparation)
 
-### 📊 Data & Features
-To extract more predictive signal from the univariate dataset, an extensive set of engineered features was developed:
+The aim is to build a predictive model that can deliver rainfall forecasts with useful accuracy even in constrained settings.
 
-- Seasonality features (cyclical encodings):  
-  Month, day of year, and week of year as sine and cosine transformations
+---
 
-- Lagged rainfall features:  
-  Daily rainfall and rainfall intensity over the past 7 days
+### 📊 Data & Engineered Features
 
-- Moving averages and accumulation:  
-  7, 14, and 30-day moving averages and rainfall sums
+Given the dataset's limitations, heavy emphasis was placed on feature engineering to enrich the information available to the models.
 
-- Variability indicators:  
-  3, 7, and 30-day rolling standard deviations
+- **Seasonality (cyclical encoding):**
+  - `Month_sin`, `Month_cos`
+  - `Day_of_Year_sin`, `Day_of_Year_cos`
+  - `Week_of_Year_sin`, `Week_of_Year_cos`
 
-- Rainfall change rate:  
-  1-day, 3-day, and 7-day rate of change in rainfall
+- **Lagged rainfall features:**
+  - 7-day lags for rainfall: `Rainfall(mm)_lag1` through `lag7`
+  - 7-day lags for rainfall intensity: `Rainfall_Intensity_lag1` through `lag7`
 
-- Binary indicators and rainfall spell features:  
-  Rainfall presence, heavy rain, extreme rain, wet spells, dry spells, and intensity-based spell durations
+- **Accumulation & moving averages:**
+  - 7D, 14D, and 30D moving averages
+  - Rolling sums over the last 7, 14, and 30 days
+
+- **Rainfall variability (standard deviation):**
+  - Rolling std dev over 3D, 7D, and 30D windows
+
+- **Rainfall change rate:**
+  - Day-on-day percentage change over 1D, 3D, and 7D periods
+
+- **Binary indicators and spell tracking:**
+  - `Rainfall_Indicator`, `Heavy_Rain_Indicator`
+  - Spells: consecutive days of slight, moderate, heavy, or extreme rainfall
+  - `Dry_Spell`, `Wet_Spell`
+
+---
 
 ### 📊 Exploratory Data Analysis (EDA)
-Exploratory data analysis was conducted to understand the characteristics of the dataset:
 
-1. Statistical profiling:
-   - Summary statistics and histograms to show distribution and skewness (most values near zero, with occasional extremes over 300–400mm)
-   - Boxplots and violin plots to identify outliers and variability across time windows
+A detailed EDA was conducted to understand the dataset's structure and behaviour:
 
-2. Trend and seasonality decomposition:
-   - Seasonal decomposition was used to separate trend, seasonality, and residual components
+- **Descriptive statistics:**
+  - Summary statistics of rainfall values
+  - Histogram showed high skewness: majority near 0mm with extreme outliers
+- **Outlier detection:**
+  - Boxplots and violin plots helped identify spread and extreme events
+- **Trend & seasonality:**
+  - Decomposition into trend, seasonal, and residual components using time series methods
+- **Temporal correlation:**
+  - ACF and PACF plots analysed autocorrelation patterns and lag impact, identifying how past rainfall affects current-day prediction
 
-3. Temporal correlation:
-   - ACF (Autocorrelation Function) and PACF (Partial Autocorrelation Function) plots were generated to analyze how previous days’ rainfall impacts current day values
-
-These analyses informed feature design and confirmed the presence of seasonality, autocorrelation, and non-stationarity in the data.
+---
 
 ### 🧠 Methods & Models
-A wide range of forecasting models were explored, with a focus on performance and interpretability given the small dataset:
 
-- Gradient boosting models:
-  - XGBoost, LightGBM, CatBoost, and AdaBoost
+A combination of classical and neural models were explored:
 
-- Deep learning models:
-  - Feedforward neural network (FNN)
-  - LSTM network
-  - Transformer-based network (currently in progress)
+- **Tree-based models (best performance):**
+  - XGBoost, LightGBM, CatBoost, AdaBoost
+  - Chosen for their robustness to sparse and small datasets
+- **Neural networks:**
+  - Feedforward Neural Network (TensorFlow)
+  - LSTM trialled for temporal dynamics
+  - Transformer-based model currently being prototyped
 
-Gradient boosting models delivered the best performance. Deep learning approaches were less effective, likely due to limited data volume and sparsity in rainfall occurrence.
+- **Hyperparameter tuning:**
+  - Used Optuna with Bayesian optimisation
+    - Benefits: more efficient than grid/random search once the parameter space is constrained
 
-SHAP (SHapley Additive Explanations) was used for model interpretability, allowing analysis of feature importance and helping guide the reduction of noisy or redundant features.
+- **Loss function:**
+  - Tweedie regression applied due to its strength in handling zero-inflated continuous data
+  - Negative predictions clipped to zero to reflect physical realism
 
-Hyperparameter tuning was conducted using Optuna with Bayesian optimization. This method was chosen for its efficiency in narrowing down the best settings in fewer trials, especially once the hyperparameter space was defined.
+- **Interpretability (XAI):**
+  - SHAP used to:
+    - Understand feature importance
+    - Detect noisy/irrelevant features
+    - Guide feature pruning and simplification
 
-Tweedie regression loss was implemented for tree-based models to better model the zero-inflated nature of rainfall data. The Tweedie distribution is particularly suitable when many observations are zero, and the rest are positive continuous values. To handle negative predictions, all model outputs below zero were clipped to zero.
+---
 
 ### 📈 Results & Evaluation
-The dataset was split using a train-validation-test approach:
-- 70% training, 15% validation, 15% testing
-- A one-month buffer was added between splits to avoid temporal leakage
 
-Evaluation metrics included:
+- **Train-validate-test split:**
+  - 70% train, 15% validation, 15% test
+  - 1-month temporal buffer between splits to reduce data leakage
 
-- MAE (Mean Absolute Error): measures average forecast error magnitude
-- RMSE (Root Mean Square Error): penalizes larger errors more than MAE
-- NSE (Nash-Sutcliffe Efficiency): compares model performance to the mean; scores above 0.5 are generally acceptable in hydrological contexts
+- **Evaluation metrics:**
+  - **MAE (Mean Absolute Error):** Measures average forecast error magnitude
+  - **RMSE (Root Mean Square Error):** Penalises larger errors; highlights poor performance during extreme rainfall
+  - **NSE (Nash–Sutcliffe Efficiency):** Indicates model improvement over baseline mean model; >0.5 considered usable in hydrological modelling
 
-Best results on the test set so far:
-- MAE: 8.633 mm
-- RMSE: 14.908 mm
-- NSE: 0.133
+- **Current best performance on test set:**
+  - MAE: 8.633 mm
+  - RMSE: 14.908 mm
+  - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
 
-While the NSE score remains low, this is expected given the data limitations and the sensitivity of NSE to extreme value forecasts. The primary aim moving forward is to improve zero-rainfall day classification and extreme event accuracy to raise the NSE closer to the 0.5 benchmark.
+---
 
 ### 🛠️ Tools & Libraries
-Python, Pandas, NumPy, Matplotlib, Seaborn, XGBoost, LightGBM, CatBoost, TensorFlow, Optuna, SHAP, Scikit-learn, PyTorch
+
+- **Data processing:**
+  - Python, Pandas, NumPy
+
+- **Visualisation:**
+  - Matplotlib, Seaborn
+
+- **Modelling:**
+  - XGBoost, LightGBM, CatBoost, AdaBoost
+  - TensorFlow, PyTorch
+
+- **Evaluation & tuning:**
+  - Scikit-learn, Optuna
+
+- **Interpretability:**
+  - SHAP
+
+ - **Environment:**
+  - Jupyter on Google Colab
+
+---
 
 ### 💡 Key Takeaways
-This project demonstrates how a sparse, univariate time series dataset can be made more useful through extensive feature engineering and thoughtful modeling. Gradient boosting models provided the most reliable forecasts, while SHAP helped highlight which features mattered most to predictions.
 
-Despite challenges in forecasting extremes and dry days, the model shows promising performance on average rainfall prediction. The study lays the foundation for practical forecasting in data-scarce settings.
+- Tailored feature engineering is critical when data is limited and noisy
+- Tree-based models remain strong candidates in low-data contexts
+- SHAP allows meaningful evaluation of feature contributions, helping streamline and improve model design
+- Evaluation metrics like NSE require careful interpretation, especially in extreme-value-heavy data
+
+---
 
 ### 🔄 Ongoing Work
-Work continues in several areas:
-- Log-transforming rainfall data before prediction to stabilize variance and reduce the impact of extreme values. This can help models better capture small-scale variability without being skewed by outliers.
-- Introducing a binary classification step before regression. The classifier will first predict whether rain will occur, followed by a regressor to estimate the amount. This two-stage approach can improve model performance on zero-rainfall days and reduce unnecessary noise in the regression stage.
+
+- **Log transformation:**  
+  Log-transformed targets may reduce skewness and variance, stabilising model training and improving extreme-value handling
+
+- **Two-stage modelling pipeline:**  
+  Exploring use of a classifier to predict rainfall occurrence (dry vs wet day), followed by a regressor to predict rainfall amount. This approach may reduce noise introduced by non-rain days and improve accuracy of forecasts
 
 ---
 
