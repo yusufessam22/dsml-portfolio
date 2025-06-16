@@ -145,7 +145,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
     - Detect noisy or irrelevant features  
     - Guide feature pruning and simplification
    
-  <figure align="center">
+<figure align="center">
   <img src="images/rain-net_catboost_shap.png" alt="Catboost SHAP readings" width="500"/>
   <figcaption>Rain-Net Figure 4: SHAP summary plot for the CatBoost model showing that recent rainfall indicators and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
 </figure>
@@ -170,7 +170,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 <figure align="center">
   <img src="images/rain-net_catboost_result.PNG" alt="Catboost results" width="500"/>
-  <figcaption>Rain-Net Figure 5: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events.</figcaption>
+  <figcaption>Rain-Net Figure 5: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events. (x-axis and y-axis removed due to confidentiality requirements.</figcaption>
 </figure>
 
 ---
