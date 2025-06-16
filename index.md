@@ -113,6 +113,11 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 - **Temporal correlation:**
   - ACF and PACF plots analysed autocorrelation patterns and lag impact, identifying how past rainfall affects current-day prediction
 
+<figure align="center">
+  <img src="/images/rain-net_acf-pacf.png" alt="Violinplot of daily rainfall" width="500"/>
+  <figcaption>The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
+</figure>
+
 ---
 
 ### 🧠 Methods & Models
