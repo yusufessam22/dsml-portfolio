@@ -45,61 +45,61 @@ Click a project to jump to its section:
 
 Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here.
 
-- Objective: Forecast daily rainfall using data from an undisclosed station in Malaysia
-- Dataset:
-  - A relatively small dataset with just a few thousand daily rainfall observations.
-  - Univariate: only feature is daily rainfall
-- Problem characteristics:
-  - Heavy zero-inflation: most days have 0mm rainfall
-  - Occasional extreme events: >200-300mm, up to over 400mm
-  - Data sparsity: a limited dataset makes learning challenging
-- Real-world relevance: Mimics situations where stations lack sufficient historical data, yet forecasting remains crucial (e.g. flood/drought preparation)
+- **Objective:** Forecast daily rainfall using data from an undisclosed station in Malaysia  
+- **Dataset:**
+  - A relatively small dataset with just a few thousand daily rainfall observations
+  - **Univariate:** only feature is daily rainfall
+- **Problem characteristics:**
+  - Heavy **zero-inflation:** most days have 0mm rainfall  
+  - Occasional **extreme events:** >200–300mm, up to over 400mm  
+  - **Data sparsity:** a limited dataset makes learning challenging
+- **Real-world relevance:** Mimics situations where stations lack sufficient historical data, yet forecasting remains crucial (e.g. flood/drought preparation)
 
 The aim is to build a predictive model that can deliver rainfall forecasts with useful accuracy even in constrained settings.
 
 ---
 
-### 📊 Data & Engineered Features
+### 📊 Data & Features
 
-Given the dataset's limitations, heavy emphasis was placed on feature engineering to enrich the information available to the models.
+Given the dataset's limitations, heavy emphasis was placed on **feature engineering** to enrich the information available to the models. The following features are engineered from the original univariate dataset (consisting only of historical daily rainfall):
 
-- **Seasonality (cyclical encoding):**
-  - `Month_sin`, `Month_cos`
-  - `Day_of_Year_sin`, `Day_of_Year_cos`
-  - `Week_of_Year_sin`, `Week_of_Year_cos`
+- **Seasonality Features (Cyclical Encoding):**
+  - Month, day of year, and week of year represented using sine and cosine transformations to capture cyclical seasonal patterns
 
-- **Lagged rainfall features:**
-  - 7-day lags for rainfall: `Rainfall(mm)_lag1` through `lag7`
-  - 7-day lags for rainfall intensity: `Rainfall_Intensity_lag1` through `lag7`
+- **Lagged Rainfall Values:**
+  - Rainfall and rainfall intensity values from the previous 1 to 7 days to model short-term temporal effects
 
-- **Accumulation & moving averages:**
-  - 7D, 14D, and 30D moving averages
-  - Rolling sums over the last 7, 14, and 30 days
+- **Accumulation and Moving Averages:**
+  - 7-day, 14-day, and 30-day moving averages of rainfall  
+  - Total rainfall over the past 7, 14, and 30 days
 
-- **Rainfall variability (standard deviation):**
-  - Rolling std dev over 3D, 7D, and 30D windows
+- **Rainfall Variability:**
+  - Rolling standard deviation over 3, 7, and 30-day windows to capture fluctuations in rainfall behaviour
 
-- **Rainfall change rate:**
-  - Day-on-day percentage change over 1D, 3D, and 7D periods
+- **Change Rate Features:**
+  - Percentage change in rainfall over 1-day, 3-day, and 7-day periods to highlight recent changes or trends
 
-- **Binary indicators and spell tracking:**
-  - `Rainfall_Indicator`, `Heavy_Rain_Indicator`
-  - Spells: consecutive days of slight, moderate, heavy, or extreme rainfall
-  - `Dry_Spell`, `Wet_Spell`
+- **Rainfall Indicators and Spell Tracking:**
+  - Indicators for rainfall occurrence and extreme rainfall events  
+  - Tracking of consecutive days with slight, moderate, heavy, or extreme rainfall  
+  - Identification of prolonged dry and wet periods
 
 ---
 
-### 📊 Exploratory Data Analysis (EDA)
+### 🧪 Exploratory Data Analysis (EDA)
 
 A detailed EDA was conducted to understand the dataset's structure and behaviour:
 
 - **Descriptive statistics:**
-  - Summary statistics of rainfall values
+  - Summary statistics of rainfall values  
   - Histogram showed high skewness: majority near 0mm with extreme outliers
+
 - **Outlier detection:**
   - Boxplots and violin plots helped identify spread and extreme events
+
 - **Trend & seasonality:**
   - Decomposition into trend, seasonal, and residual components using time series methods
+
 - **Temporal correlation:**
   - ACF and PACF plots analysed autocorrelation patterns and lag impact, identifying how past rainfall affects current-day prediction
 
@@ -107,78 +107,77 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ### 🧠 Methods & Models
 
-A combination of classical and neural models were explored:
-
-- **Tree-based models (best performance):**
-  - XGBoost, LightGBM, CatBoost, AdaBoost
-  - Chosen for their robustness to sparse and small datasets
-- **Neural networks:**
-  - Feedforward Neural Network (TensorFlow)
-  - LSTM trialled for temporal dynamics
-  - Transformer-based model currently being prototyped
+- A combination of classical and neural models were explored:
+    - **Tree-based models (best performance):**
+      - XGBoost, LightGBM, CatBoost  
+      - Chosen for their robustness to sparse and small datasets
+    - **Neural networks:**
+      - Feedforward Neural Network (TensorFlow)  
+      - LSTM trialled
+      - Transformer-based model currently being prototyped
 
 - **Hyperparameter tuning:**
-  - Used Optuna with Bayesian optimisation
-    - Benefits: more efficient than grid/random search once the parameter space is constrained
+  - Used Optuna with **Bayesian optimisation**
+    - More efficient than grid/random search once the parameter space is constrained
 
 - **Loss function:**
-  - Tweedie regression applied due to its strength in handling zero-inflated continuous data
+  - **Tweedie regression** applied due to its strength in handling zero-inflated continuous data  
   - Negative predictions clipped to zero to reflect physical realism
 
 - **Interpretability (XAI):**
-  - SHAP used to:
-    - Understand feature importance
-    - Detect noisy/irrelevant features
+  - **SHAP** used to:
+    - Understand feature importance  
+    - Detect noisy or irrelevant features  
     - Guide feature pruning and simplification
+
+- **Train-validate-test split:**
+  - 70% train, 15% validation, 15% test  
+  - 1-month temporal buffer between splits to reduce data leakage
+
+- **Evaluation metrics:**
+  - **MAE (Mean Absolute Error):** Measures average forecast error magnitude  
+  - **RMSE (Root Mean Square Error):** Penalises larger errors; highlights poor performance during extreme rainfall  
+  - **NSE (Nash–Sutcliffe Efficiency):** Indicates model improvement over baseline mean model; >0.5 considered usable in hydrological modelling
 
 ---
 
 ### 📈 Results & Evaluation
 
-- **Train-validate-test split:**
-  - 70% train, 15% validation, 15% test
-  - 1-month temporal buffer between splits to reduce data leakage
-
-- **Evaluation metrics:**
-  - **MAE (Mean Absolute Error):** Measures average forecast error magnitude
-  - **RMSE (Root Mean Square Error):** Penalises larger errors; highlights poor performance during extreme rainfall
-  - **NSE (Nash–Sutcliffe Efficiency):** Indicates model improvement over baseline mean model; >0.5 considered usable in hydrological modelling
-
 - **Current best performance on test set:**
-  - MAE: 8.633 mm
-  - RMSE: 14.908 mm
-  - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
+  - **MAE:** 8.633 mm  
+  - **RMSE:** 14.908 mm  
+  - **NSE:** 0.133 (Low, but expected due to data limitations and high variance from extremes)
 
 ---
 
 ### 🛠️ Tools & Libraries
 
-- **Data processing:**
+- **Data Processing:**
   - Python, Pandas, NumPy
 
 - **Visualisation:**
   - Matplotlib, Seaborn
 
 - **Modelling:**
-  - XGBoost, LightGBM, CatBoost, AdaBoost
+  - XGBoost, LightGBM, CatBoost  
   - TensorFlow, PyTorch
 
-- **Evaluation & tuning:**
+- **Evaluation & Optimisation:**
   - Scikit-learn, Optuna
 
 - **Interpretability:**
   - SHAP
 
- - **Environment:**
-  - Jupyter on Google Colab
+- **Environment:**
+  - Jupyter (on Google Colab)
 
 ---
 
 ### 💡 Key Takeaways
 
-- Tailored feature engineering is critical when data is limited and noisy
-- Tree-based models remain strong candidates in low-data contexts
-- SHAP allows meaningful evaluation of feature contributions, helping streamline and improve model design
+- Tailored feature engineering is critical when data is limited and noisy  
+- Tree-based models remain strong candidates in low-data contexts  
+- SHAP allows meaningful evaluation of feature contributions, helping streamline and improve model design  
 - Evaluation metrics like NSE require careful interpretation, especially in extreme-value-heavy data
 
 ---
