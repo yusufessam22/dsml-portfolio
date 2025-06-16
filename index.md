@@ -98,12 +98,12 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - Boxplots and violin plots helped identify spread and extreme events
 
 <figure align="center">
-  <img src="/images/rain-net_boxplot.png" alt="Boxplot of daily rainfall" width="500"/>
+  <img src="images/rain-net_boxplot.png" alt="Boxplot of daily rainfall" width="500"/>
   <figcaption>Boxplot showing most data points are tightly clustered near the lower end of the scale, with a long tail and many outliers indicating extreme rainfall events.</figcaption>
 </figure>
 
 <figure align="center">
-  <img src="/images/rain-net_violinplot.png" alt="Violinplot of daily rainfall" width="500"/>
+  <img src="images/rain-net_violinplot.png" alt="Violinplot of daily rainfall" width="500"/>
   <figcaption>The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
 </figure>
 
