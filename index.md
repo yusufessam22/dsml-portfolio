@@ -9,9 +9,9 @@ Welcome to my portfolio of **data science and machine learning projects**, devel
 
 ## 🔍 What You'll Find Here
 
-- Applied machine learning projects grounded in research and analytics
-- Collaborations with universities and research teams
-- Work focused on forecasting, prediction, and model evaluation
+- Applied machine learning projects grounded in research and analytics  
+- Collaborations with universities and research teams  
+- Work focused on forecasting, prediction, and model evaluation  
 
 ---
 
@@ -19,118 +19,107 @@ Welcome to my portfolio of **data science and machine learning projects**, devel
 
 Click a project to jump to its section:
 
-- [💧 Forecasting Univariate Daily Rainfall (2025 - ongoing)](#💧-forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
-- [♟️ Modeling Monte Carlo Tree Search Performance (2024)](#♟️-modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
-- [🔆 Solar Power Forecasting with Machine Learning (2022)](#🔆-investigating-photovoltaic-solar-power-output-forecasting-2022)
-- [🚣 Streamflow Prediction in Malaysia (2022)](#🚣-predicting-streamflow-in-peninsular-malaysia-2022)
-- [⛰️ Sediment Load Forecasting (2022)](#⛰️-predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
+- [💧 Project 1: Forecasting Univariate Daily Rainfall (2025 - ongoing)](#project-1-forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
+- [♟️ Project 2: Modeling Monte Carlo Tree Search Performance (2024)](#project-2-modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
+- [🔆 Project 3: Solar Power Forecasting with Machine Learning (2022)](#project-3-investigating-photovoltaic-solar-power-output-forecasting-2022)
+- [🚣 Project 4: Streamflow Prediction in Malaysia (2022)](#project-4-predicting-streamflow-in-peninsular-malaysia-2022)
+- [⛰️ Project 5: Sediment Load Forecasting (2022)](#project-5-predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
 
 ---
 
-## 💧 Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)
+## 💧 Project 1: Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)
 
-### 🌧️ Project Overview
+### 🔍 Overview
+Research-led project focused on **daily rainfall forecasting** using univariate time series data from Malaysia. Built in collaboration with Sunway University to improve localized weather prediction using machine learning.
 
-This research-led project focuses on **daily rainfall forecasting** using univariate time series data from Malaysia. Developed in collaboration with Sunway University, the project highlights structured data preparation, in-depth feature engineering, and benchmarking of classical and neural network models.
-
-> **Status**: In Progress
-
-### ✅ Project Highlights
-
-- Built a reproducible ML pipeline with automated environment setup
-- Handled irregular time-series data with missing dates
-- Designed domain-specific features:
-  - Lagged rainfall values
-  - Accumulated rainfall
+### 📊 Data & Features
+- ~3500 rows of historical daily rainfall data  
+- Time-series engineered features:
+  - Lagged rainfall, accumulated rainfall
   - Rainfall spell tracking
-  - Seasonality encodings
-- Modeled using:
-  - XGBoost, LightGBM, CatBoost
-  - Feedforward Neural Network (TensorFlow)
-  - LSTM and Transformer (scaffolding prepared)
-- Applied Optuna for hyperparameter tuning
-- Interpreted model outputs using SHAP values
+  - Seasonality (month, day) encodings
 
-### 🧠 Tools & Libraries
+### 🧠 Methods & Models
+- Classical ML: XGBoost, LightGBM, CatBoost  
+- Neural Networks: Feedforward NN (TensorFlow), LSTM/Transformer groundwork  
+- Hyperparameter tuning: Optuna  
+- Interpretability: SHAP for tree-based models
 
-`Python`, `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`, `XGBoost`, `LightGBM`, `CatBoost`, `TensorFlow`, `Optuna`, `SHAP`, `Statsmodels`, `Scikit-learn`, `PyTorch`
+### 📈 Results & Evaluation
+- RMSE/MAE across different models  
+- Improved performance through domain-informed feature engineering and model tuning
 
-### 💡 Skills Demonstrated
+### 🛠️ Tools & Libraries
+`Python`, `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`, `XGBoost`, `LightGBM`, `CatBoost`, `TensorFlow`, `Optuna`, `SHAP`, `Scikit-learn`, `PyTorch`
 
-- Time-series cleaning and preparation
-- Advanced feature engineering
-- Machine learning model development and comparison
-- Explainable AI techniques for interpretability
-
----
-
-## ♟️ Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)
-
-### 🔍 Overview
-
-*Coming soon...*
-
-### 🧠 Problem Statement
-
-### 🧪 Data Used
-
-### ⚙️ Methods & Techniques
-
-### 📊 Results
-
-### 🔄 Next Steps
+### 💡 Key Takeaways
+- Demonstrated the power of tailored feature engineering for small and noisy datasets  
+- Gained insights into how model interpretability tools like SHAP support environmental forecasting
 
 ---
 
-## 🔆 Investigating Photovoltaic Solar Power Output Forecasting (2022)
+## ♟️ Project 2: Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)
 
 ### 🔍 Overview
-
 *Coming soon...*
 
-### 🧠 Problem Statement
+### 📊 Data & Features
 
-### 🧪 Data Used
+### 🧠 Methods & Models
 
-### ⚙️ Methods & Techniques
+### 📈 Results & Evaluation
 
-### 📊 Results
+### 🛠️ Tools & Libraries
 
-### 🔄 Next Steps
+### 💡 Key Takeaways
 
 ---
 
-## 🚣 Predicting Streamflow in Peninsular Malaysia (2022)
+## 🔆 Project 3: Investigating Photovoltaic Solar Power Output Forecasting (2022)
 
 ### 🔍 Overview
-
 *Coming soon...*
 
-### 🧠 Problem Statement
+### 📊 Data & Features
 
-### 🧪 Data Used
+### 🧠 Methods & Models
 
-### ⚙️ Methods & Techniques
+### 📈 Results & Evaluation
 
-### 📊 Results
+### 🛠️ Tools & Libraries
 
-### 🔄 Next Steps
+### 💡 Key Takeaways
 
 ---
 
-## ⛰️ Predicting Suspended Sediment Load in Peninsular Malaysia (2022)
+## 🚣 Project 4: Predicting Streamflow in Peninsular Malaysia (2022)
 
 ### 🔍 Overview
-
 *Coming soon...*
 
-### 🧠 Problem Statement
+### 📊 Data & Features
 
-### 🧪 Data Used
+### 🧠 Methods & Models
 
-### ⚙️ Methods & Techniques
+### 📈 Results & Evaluation
 
-### 📊 Results
+### 🛠️ Tools & Libraries
 
-### 🔄 Next Steps
+### 💡 Key Takeaways
 
+---
+
+## ⛰️ Project 5: Predicting Suspended Sediment Load in Peninsular Malaysia (2022)
+
+### 🔍 Overview
+*Coming soon...*
+
+### 📊 Data & Features
+
+### 🧠 Methods & Models
+
+### 📈 Results & Evaluation
+
+### 🛠️ Tools & Libraries
+
+### 💡 Key Takeaways
