@@ -97,6 +97,10 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 - **Outlier detection:**
   - Boxplots and violin plots helped identify spread and extreme events
 
+ ![Boxplot of daily rainfall data](/assets/images/rain-net_boxplot.png)
+
+ ![Violinplot of daily rainfall data](/assets/images/rain-net_violinplot.png)
+
 - **Trend & seasonality:**
   - Decomposition into trend, seasonal, and residual components using time series methods
 
