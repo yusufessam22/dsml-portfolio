@@ -1,81 +1,107 @@
-# yusuf_dsml-portfolio
-Yusuf' data science and machine learning projects
+# 🚀 Yusuf Essam's Data Science & ML Portfolio
 
-Project 1: Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)
+Welcome to my portfolio of **data science and machine learning projects**, built through academic collaborations, research initiatives, and personal learning. This space showcases my work in developing advanced **ML pipelines**, with a focus on data preparation, exploratory analysis, feature engineering, and model training & evaluation.
 
-# 🌧️ Rainfall Forecasting with Machine Learning (Sunway University Project)
-
-This project presents an end-to-end machine learning pipeline for **daily rainfall forecasting** in Malaysia. Designed to handle a small and imbalanced time series dataset, the project combines real-world engineering challenges with modern ML techniques. It is part of an ongoing research initiative at Sunway University.
-
-> 🚧 **Status**: Work in Progress (Actively Developed)
+🔍 **What you'll find here**:
+- Research-focused ML applications developed with universities
+- Kaggle-driven analytical modeling
+- Projects focused on the core stages of the data science workflow (up to modeling & evaluation)
 
 ---
 
-## ✅ What’s Been Done So Far
+## 🗂️ Project Index
 
-### 📦 Project Setup
-- Reproducible environment with fixed random seeds.
-- Automated package installation and modular structure for scalability.
+Click a project to jump to its section:
 
-### 📊 Data Exploration & Preprocessing
-- Inspected, interpolated, and cleaned raw daily rainfall data.
-- Explored statistical characteristics, trends, and seasonality.
-- Engineered domain-specific features:
-  - Lagged rainfall
-  - Accumulated rainfall
-  - Rainfall intensity
-  - Rainfall spell tracking
-  - Seasonality encodings
-
-### 🤖 Forecasting Models Implemented
-- **XGBoost**, **LightGBM**, and **CatBoost** with:
-  - Baseline performance runs
-  - Feature selection
-  - Merged train-validation sets
-- **Feedforward Neural Network (FNN)** using TensorFlow
-- Groundwork laid for **LSTM** and **Transformer** architectures
-- Hyperparameter tuning with **Optuna**
-- Model explainability with **SHAP**
-
-### 🧪 Experiment Management
-- Structured experiments across multiple configurations.
-- “Workspace” section for model testing, ablation, and sandboxing.
+- [📈 Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)](#forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
+- [♟️ Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)](#modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
+- [🔆 Investigating Photovoltaic Solar Power Output Forecasting (2022)](#investigating-photovoltaic-solar-power-output-forecasting-2022)
+- [🌊 Predicting Streamflow in Peninsular Malaysia (2022)](#predicting-streamflow-in-peninsular-malaysia-2022)
+- [🪨 Predicting Suspended Sediment Load in Peninsular Malaysia (2022)](#predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
 
 ---
 
-## 🧠 Technical Stack
+## 📈 Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)
 
-`Python`, `Pandas`, `NumPy`, `Seaborn`, `Matplotlib`, `XGBoost`, `LightGBM`, `CatBoost`, `Optuna`, `TensorFlow`, `SHAP`, `Statsmodels`, `Scikit-learn`, `PyTorch`, `Graphviz`
+### 🌧️ Project Overview
+This project explores **univariate time series forecasting** for daily rainfall in Malaysia using machine learning. Developed as part of an academic research effort at Sunway University, it emphasizes **data preprocessing**, **feature engineering**, and **model benchmarking** using both traditional and deep learning methods.
+
+> 🚧 **Status**: In Progress — Modeling and analysis completed; deployment not included.
+
+### ✅ What’s Been Done
+- Time-series data inspection and interpolation
+- Feature engineering: lag variables, rainfall accumulation, spell detection, seasonality
+- Modeling with:
+  - XGBoost, LightGBM, CatBoost
+  - Feedforward Neural Network (FNN)
+  - LSTM and Transformer groundwork
+- Hyperparameter optimization using Optuna
+- Model interpretation using SHAP
+
+### 🧠 Tools & Libraries
+Python, Pandas, NumPy, Seaborn, Matplotlib, XGBoost, LightGBM, CatBoost, TensorFlow, Optuna, SHAP, Scikit-learn, Statsmodels, PyTorch
+
+### 🎯 Skills Demonstrated
+- Handling missing time series data
+- Advanced feature engineering for forecasting
+- Comparative evaluation of ML models
+- Applying XAI techniques in environmental modeling
 
 ---
 
-## 🔜 Next Steps
+## ♟️ Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)
 
-- Complete training and evaluation of **LSTM** and **Transformer** models.
-- Integrate external APIs for **live data ingestion**.
-- Deploy model using **FastAPI** or **AWS Lambda** as a REST service.
-- Build a simple **web dashboard or Power BI report** for rainfall visualization.
+### 🔍 Overview
+*Coming soon...*
 
----
+### 🧠 Problem Statement
 
-## 🎯 Why This Project Matters
+### 🧪 Data Used
 
-This project simulates a production-ready **end-to-end ML pipeline** tailored to environmental forecasting. It demonstrates skills across:
-- Data engineering & feature design
-- ML modeling & tuning
-- Interpretability & validation
-- Scalable deployment planning
+### ⚙️ Methods & Techniques
 
-Perfectly suited for roles in **ML Engineering**, **Data Science**, or **AI for Environmental Intelligence**.
+### 📊 Results
+
+### 🔄 Next Steps
 
 ---
 
+## 🔆 Investigating Photovoltaic Solar Power Output Forecasting (2022)
 
+### 🔍 Overview
+*Coming soon...*
 
-Project 2: Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)
+### 🧠 Problem Statement
 
-Project 3: Investigating photovoltaic solar power output forecasting using machine learning algorithms (2022)
+### 🧪 Data Used
 
-Project 4: Predicting streamflow in Peninsular Malaysia using support vector machine and deep learning algorithms (2022)
+### ⚙️ Methods & Techniques
 
-Project 5: Predicting suspended sediment load in Peninsular Malaysia using support vector machine and deep learning algorithms (2022)
+### 📊 Results
+
+### 🔄 Next Steps
+
+---
+
+## 🌊 Predicting Streamflow in Peninsular Malaysia (2022)
+
+### 🔍 Overview
+*Coming soon...*
+
+### 🧠 Problem Statement
+
+### 🧪 Data Used
+
+### ⚙️ Methods & Techniques
+
+### 📊 Results
+
+### 🔄 Next Steps
+
+---
+
+## 🪨 Predicting Suspended Sediment Load in Peninsular Malaysia (2022)
+
+### 🔍 Overview
+*Coming*
+
