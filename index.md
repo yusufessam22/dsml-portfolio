@@ -31,15 +31,15 @@ Thanks again for visiting, and I hope you find something here that interests you
 
 Click a project to jump to its section:
 
-- [💧 Project 1: Daily Rainfall Forecasting (2025 - ongoing)](#project-1-forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
-- [♟️ Project 2: Monte Carlo Tree Search Variant Performance Prediction (2024)](#project-2-modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
-- [🔆 Project 3: Photovoltaic Solar Power Prediction (2022)](#project-3-investigating-photovoltaic-solar-power-output-forecasting-2022)
-- [🚣 Project 4: River Streamflow Forecasting (2022)](#project-4-predicting-streamflow-in-peninsular-malaysia-2022)
-- [⛰️ Project 5: Suspended Sediment Load Forecasting (2022)](#project-5-predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
+- [💧 Rain-Net: Daily Rainfall Forecasting (2025 - ongoing)](#rain-net-daily-rainfall-forecasting-2025---ongoing)
+- [♟️ VersusAI: Monte Carlo Tree Search Variant Performance Prediction (2024)](#versusai-monte-carlo-tree-search-variant-performance-prediction-2024)
+- [🔆 SolarCast: Photovoltaic Solar Power Prediction (2022)](#solarcast-photovoltaic-solar-power-prediction-2022)
+- [🚣 FlowTrack: River Streamflow Forecasting (2022)](#flowtrack-river-streamflow-forecasting-2022)
+- [⛰️ SediSense: Suspended Sediment Load Forecasting (2022)](#sedisense-suspended-sediment-load-forecasting-2022)
 
 ---
 
-## Project 1: Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)
+## Rain-Net: Daily Rainfall Forecasting (2025 - ongoing)
 
 ### 🔍 Overview
 Research-led project focused on **daily rainfall forecasting** using univariate time series data from Malaysia. Built in collaboration with Sunway University to improve localized weather prediction using machine learning.
@@ -70,7 +70,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## Project 2: Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)
+## VersusAI: Monte Carlo Tree Search Variant Performance Prediction (2024)
 
 ### 🔍 Overview
 *Coming soon...*
@@ -87,7 +87,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## Project 3: Investigating Photovoltaic Solar Power Output Forecasting (2022)
+## SolarCast: Photovoltaic Solar Power Prediction (2022)
 
 ### 🔍 Overview
 *Coming soon...*
@@ -104,7 +104,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## Project 4: Predicting Streamflow in Peninsular Malaysia (2022)
+## FlowTrack: River Streamflow Forecasting (2022)
 
 ### 🔍 Overview
 *Coming soon...*
@@ -121,7 +121,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## Project 5: Predicting Suspended Sediment Load in Peninsular Malaysia (2022)
+## SediSense: Suspended Sediment Load Forecasting (2022)
 
 ### 🔍 Overview
 *Coming soon...*
