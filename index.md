@@ -8,7 +8,7 @@ layout: default
 
 Welcome, and thank you for stopping by my data science and machine learning portfolio! 
 
-I'm Yusuf, a part-time analytics postgraduate student at Georgia Tech, former engineer at Arup, and an aspiring industry-based data science and machine learning professional. This space brings together projects I've worked on through academic research, collaborations with universities, and self-guided learning.
+I'm Yusuf, a part-time analytics postgraduate student at Georgia Tech and an aspiring applied data science and machine learning professional. This space brings together projects I've worked on through academic research, collaborations with universities, and self-guided learning.
 
 These projects reflect my experience working with real-world data, where I've applied data science and machine learning techniques like statistical analysis, regression modelling, and time series forecasting to uncover useful insights. While much of my work has been shaped by research-driven challenges, I've also taken the initiative to explore ideas independently and build out complete workflows from data preparation to model evaluation.
 
