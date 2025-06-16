@@ -27,7 +27,7 @@ Click a project to jump to its section:
 
 ---
 
-## 💧 Project 1: Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)
+## Project 1: Forecasting Univariate Daily Rainfall for an Undisclosed Station in Malaysia (2025 - ongoing)
 
 ### 🔍 Overview
 Research-led project focused on **daily rainfall forecasting** using univariate time series data from Malaysia. Built in collaboration with Sunway University to improve localized weather prediction using machine learning.
@@ -58,7 +58,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## ♟️ Project 2: Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)
+## Project 2: Modeling Competitive Performance in Monte Carlo Tree Search Variants (2024)
 
 ### 🔍 Overview
 *Coming soon...*
@@ -75,7 +75,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## 🔆 Project 3: Investigating Photovoltaic Solar Power Output Forecasting (2022)
+## Project 3: Investigating Photovoltaic Solar Power Output Forecasting (2022)
 
 ### 🔍 Overview
 *Coming soon...*
@@ -92,7 +92,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## 🚣 Project 4: Predicting Streamflow in Peninsular Malaysia (2022)
+## Project 4: Predicting Streamflow in Peninsular Malaysia (2022)
 
 ### 🔍 Overview
 *Coming soon...*
@@ -109,7 +109,7 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 
 ---
 
-## ⛰️ Project 5: Predicting Suspended Sediment Load in Peninsular Malaysia (2022)
+## Project 5: Predicting Suspended Sediment Load in Peninsular Malaysia (2022)
 
 ### 🔍 Overview
 *Coming soon...*
