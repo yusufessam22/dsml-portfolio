@@ -169,7 +169,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
 
 <figure align="center">
-  <img src="images/rain-net_catboost_result.png" alt="Catboost results" width="500"/>
+  <img src="images/rain-net_catboost_result.PNG" alt="Catboost results" width="500"/>
   <figcaption>Rain-Net Figure 5: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events.</figcaption>
 </figure>
 
