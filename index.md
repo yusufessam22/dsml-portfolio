@@ -102,7 +102,6 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   <figcaption>Boxplot showing most data points are tightly clustered near the lower end of the scale, with a long tail and many outliers indicating extreme rainfall events.</figcaption>
 </figure>
 
-
 <figure align="center">
   <img src="images/rain-net_violinplot.png" alt="Violinplot of daily rainfall" width="500"/>
   <figcaption>The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
@@ -115,8 +114,8 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - ACF and PACF plots analysed autocorrelation patterns and lag impact, identifying how past rainfall affects current-day prediction
 
 <figure align="center">
-  <img src="/images/rain-net_acf-pacf.png" alt="Violinplot of daily rainfall" width="500"/>
-  <figcaption>The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
+  <img src="images/rain-net_acf-pacf.png" alt="ACF and PACF of daily rainfall" width="500"/>
+  <figcaption>ACF and PACF plots show significant short-term autocorrelation, supporting the use of up to 7 lag days as predictive features.</figcaption>
 </figure>
 
 ---
@@ -145,6 +144,11 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
     - Understand feature importance  
     - Detect noisy or irrelevant features  
     - Guide feature pruning and simplification
+   
+  <figure align="center">
+  <img src="images/rain-net_catboost_shap.png" alt="Catboost SHAP readings" width="500"/>
+  <figcaption>SHAP summary plot for the CatBoost modelshowing that recent rainfall indicators and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
+</figure>
 
 - **Train-validate-test split:**
   - 70% train, 15% validation, 15% test  
@@ -163,6 +167,11 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - MAE: 8.633 mm  
   - RMSE: 14.908 mm  
   - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
+
+<figure align="center">
+  <img src="images/rain-net_catboost_result.png" alt="Catboost results" width="500"/>
+  <figcaption>The model captures general rainfall patterns and timing but underestimates many extreme rainfall events.</figcaption>
+</figure>
 
 ---
 
