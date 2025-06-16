@@ -170,7 +170,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 <figure align="center">
   <img src="images/rain-net_catboost_result.PNG" alt="Catboost results" width="500"/>
-  <figcaption>Rain-Net Figure 5: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events. (x-axis and y-axis removed due to confidentiality requirements.</figcaption>
+  <figcaption>Rain-Net Figure 5: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events. (x-axis and y-axis removed due to confidentiality requirements.)</figcaption>
 </figure>
 
 ---
