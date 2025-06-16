@@ -219,10 +219,15 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ## VersusAI: Monte Carlo Tree Search Variant Performance Prediction (2024)
 
+⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+
 ### 🔍 Overview
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
+
+### 🧪 Exploratory Data Analysis (EDA)
 *Coming soon...*
 
 ### 🧠 Methods & Models
@@ -241,10 +246,15 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ## SolarCast: Photovoltaic Solar Power Prediction (2022)
 
+⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+
 ### 🔍 Overview
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
+
+### 🧪 Exploratory Data Analysis (EDA)
 *Coming soon...*
 
 ### 🧠 Methods & Models
@@ -263,10 +273,15 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ## FlowTrack: River Streamflow Forecasting (2022)
 
+⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+
 ### 🔍 Overview
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
+
+### 🧪 Exploratory Data Analysis (EDA)
 *Coming soon...*
 
 ### 🧠 Methods & Models
@@ -285,10 +300,15 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ## SediSense: Suspended Sediment Load Forecasting (2022)
 
+⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+
 ### 🔍 Overview
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
+
+### 🧪 Exploratory Data Analysis (EDA)
 *Coming soon...*
 
 ### 🧠 Methods & Models
