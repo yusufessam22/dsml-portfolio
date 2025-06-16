@@ -19,11 +19,11 @@ Welcome to my portfolio of **data science and machine learning projects**, devel
 
 Click a project to jump to its section:
 
-- [💧 Forecasting Univariate Daily Rainfall (2025 - ongoing)](#forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
-- [♟️ Modeling Monte Carlo Tree Search Performance (2024)](#modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
-- [🔆 Solar Power Forecasting with Machine Learning (2022)](#investigating-photovoltaic-solar-power-output-forecasting-2022)
-- [🚣 Streamflow Prediction in Malaysia (2022)](#predicting-streamflow-in-peninsular-malaysia-2022)
-- [⛰️ Sediment Load Forecasting (2022)](#predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
+- [💧 Forecasting Univariate Daily Rainfall (2025 - ongoing)](#💧-forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
+- [♟️ Modeling Monte Carlo Tree Search Performance (2024)](#♟️-modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
+- [🔆 Solar Power Forecasting with Machine Learning (2022)](#🔆-investigating-photovoltaic-solar-power-output-forecasting-2022)
+- [🚣 Streamflow Prediction in Malaysia (2022)](#🚣-predicting-streamflow-in-peninsular-malaysia-2022)
+- [⛰️ Sediment Load Forecasting (2022)](#⛰️-predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
 
 ---
 
