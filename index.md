@@ -24,15 +24,17 @@ My background so far has been focused mostly on academic and research settings, 
 
 Thanks again for visiting, and I hope you find something here that interests you. Whether you're a hiring manager, data team lead, or just curious, I'm glad you're here!
 
+---
+
 ## 🗂️ Project Index
 
 Click a project to jump to its section:
 
-- [💧 Project 1: Forecasting Univariate Daily Rainfall (2025 - ongoing)](#project-1-forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
-- [♟️ Project 2: Modeling Monte Carlo Tree Search Performance (2024)](#project-2-modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
-- [🔆 Project 3: Solar Power Forecasting with Machine Learning (2022)](#project-3-investigating-photovoltaic-solar-power-output-forecasting-2022)
-- [🚣 Project 4: Streamflow Prediction in Malaysia (2022)](#project-4-predicting-streamflow-in-peninsular-malaysia-2022)
-- [⛰️ Project 5: Sediment Load Forecasting (2022)](#project-5-predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
+- [💧 Project 1: Daily Rainfall Forecasting (2025 - ongoing)](#project-1-forecasting-univariate-daily-rainfall-for-an-undisclosed-station-in-malaysia-2025---ongoing)
+- [♟️ Project 2: Monte Carlo Tree Search Variant Performance Prediction (2024)](#project-2-modeling-competitive-performance-in-monte-carlo-tree-search-variants-2024)
+- [🔆 Project 3: Photovoltaic Solar Power Prediction (2022)](#project-3-investigating-photovoltaic-solar-power-output-forecasting-2022)
+- [🚣 Project 4: River Streamflow Forecasting (2022)](#project-4-predicting-streamflow-in-peninsular-malaysia-2022)
+- [⛰️ Project 5: Suspended Sediment Load Forecasting (2022)](#project-5-predicting-suspended-sediment-load-in-peninsular-malaysia-2022)
 
 ---
 
