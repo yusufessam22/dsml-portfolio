@@ -147,7 +147,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
    
   <figure align="center">
   <img src="images/rain-net_catboost_shap.png" alt="Catboost SHAP readings" width="500"/>
-  <figcaption>Rain-Net Figure 4: SHAP summary plot for the CatBoost modelshowing that recent rainfall indicators and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
+  <figcaption>Rain-Net Figure 4: SHAP summary plot for the CatBoost model showing that recent rainfall indicators and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
 </figure>
 
 - **Train-validate-test split:**
