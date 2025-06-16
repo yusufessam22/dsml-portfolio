@@ -3,8 +3,6 @@ title: "Yusuf's Data Science & Machine Learning Portfolio"
 layout: default
 ---
 
-# 🚀 Yusuf Essam's Data Science & ML Portfolio
-
 Welcome to my portfolio of **data science and machine learning projects**, developed through academic research, university collaborations, and personal exploration. These projects showcase my strengths in **data analysis**, **feature engineering**, and **machine learning modeling** applied to real-world problems in environmental and AI domains.
 
 ## 🔍 What You'll Find Here
