@@ -76,14 +76,19 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
 
 ### 🧠 Methods & Models
+*Coming soon...*
 
 ### 📈 Results & Evaluation
+*Coming soon...*
 
 ### 🛠️ Tools & Libraries
+*Coming soon...*
 
 ### 💡 Key Takeaways
+*Coming soon...*
 
 ---
 
@@ -93,14 +98,19 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
 
 ### 🧠 Methods & Models
+*Coming soon...*
 
 ### 📈 Results & Evaluation
+*Coming soon...*
 
 ### 🛠️ Tools & Libraries
+*Coming soon...*
 
 ### 💡 Key Takeaways
+*Coming soon...*
 
 ---
 
@@ -110,14 +120,19 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
 
 ### 🧠 Methods & Models
+*Coming soon...*
 
 ### 📈 Results & Evaluation
+*Coming soon...*
 
 ### 🛠️ Tools & Libraries
+*Coming soon...*
 
 ### 💡 Key Takeaways
+*Coming soon...*
 
 ---
 
@@ -127,11 +142,16 @@ Research-led project focused on **daily rainfall forecasting** using univariate 
 *Coming soon...*
 
 ### 📊 Data & Features
+*Coming soon...*
 
 ### 🧠 Methods & Models
+*Coming soon...*
 
 ### 📈 Results & Evaluation
+*Coming soon...*
 
 ### 🛠️ Tools & Libraries
+*Coming soon...*
 
 ### 💡 Key Takeaways
+*Coming soon...*
