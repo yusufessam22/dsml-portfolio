@@ -48,11 +48,11 @@ Rain-Net is an ongoing research collaboration with Sunway University, focused on
 - **Objective:** Forecast daily rainfall using data from an undisclosed station in Malaysia  
 - **Dataset:**
   - A relatively small dataset with just a few thousand daily rainfall observations
-  - **Univariate:** only feature is daily rainfall
+  - Univariate: only feature is daily rainfall
 - **Problem characteristics:**
-  - Heavy **zero-inflation:** most days have 0mm rainfall  
-  - Occasional **extreme events:** >200–300mm, up to over 400mm  
-  - **Data sparsity:** a limited dataset makes learning challenging
+  - Heavy zero-inflation: most days have 0mm rainfall  
+  - Occasional extreme events: >200–300mm, up to over 400mm  
+  - Data sparsity: a limited dataset makes learning challenging
 - **Real-world relevance:** Mimics situations where stations lack sufficient historical data, yet forecasting remains crucial (e.g. flood/drought preparation)
 
 The aim is to build a predictive model that can deliver rainfall forecasts with useful accuracy even in constrained settings.
@@ -61,7 +61,7 @@ The aim is to build a predictive model that can deliver rainfall forecasts with 
 
 ### 📊 Data & Features
 
-Given the dataset's limitations, heavy emphasis was placed on **feature engineering** to enrich the information available to the models. The following features are engineered from the original univariate dataset (consisting only of historical daily rainfall):
+Given the dataset's limitations, heavy emphasis was placed on feature engineering to enrich the information available to the models. The following features are engineered from the original univariate dataset (consisting only of historical daily rainfall):
 
 - **Seasonality Features (Cyclical Encoding):**
   - Month, day of year, and week of year represented using sine and cosine transformations to capture cyclical seasonal patterns
@@ -113,19 +113,19 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
       - Chosen for their robustness to sparse and small datasets
     - **Neural networks:**
       - Feedforward Neural Network (TensorFlow)  
-      - LSTM trialled
-      - Transformer-based model currently being prototyped
+      - Long short-term memory Neural Network
+      - Transformer-based Neural Network (currently being prototyped)
 
 - **Hyperparameter tuning:**
-  - Used Optuna with **Bayesian optimisation**
+  - Used Optuna with Bayesian optimisation
     - More efficient than grid/random search once the parameter space is constrained
 
 - **Loss function:**
-  - **Tweedie regression** applied due to its strength in handling zero-inflated continuous data  
+  - Tweedie regression applied due to its strength in handling zero-inflated continuous data  
   - Negative predictions clipped to zero to reflect physical realism
 
 - **Interpretability (XAI):**
-  - **SHAP** used to:
+  - SHAP used to:
     - Understand feature importance  
     - Detect noisy or irrelevant features  
     - Guide feature pruning and simplification
@@ -135,18 +135,18 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - 1-month temporal buffer between splits to reduce data leakage
 
 - **Evaluation metrics:**
-  - **MAE (Mean Absolute Error):** Measures average forecast error magnitude  
-  - **RMSE (Root Mean Square Error):** Penalises larger errors; highlights poor performance during extreme rainfall  
-  - **NSE (Nash–Sutcliffe Efficiency):** Indicates model improvement over baseline mean model; >0.5 considered usable in hydrological modelling
+  - MAE (Mean Absolute Error): Measures average forecast error magnitude  
+  - RMSE (Root Mean Square Error): Penalises larger errors; highlights poor performance during extreme rainfall  
+  - NSE (Nash–Sutcliffe Efficiency): Indicates model improvement over baseline mean model; >0.5 considered usable in hydrological modelling
 
 ---
 
 ### 📈 Results & Evaluation
 
 - **Current best performance on test set:**
-  - **MAE:** 8.633 mm  
-  - **RMSE:** 14.908 mm  
-  - **NSE:** 0.133 (Low, but expected due to data limitations and high variance from extremes)
+  - MAE: 8.633 mm  
+  - RMSE: 14.908 mm  
+  - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
 
 ---
 
