@@ -10,9 +10,9 @@ Welcome, and thank you for stopping by my data science and machine learning port
 
 I'm Yusuf, a part-time analytics postgraduate student at Georgia Tech and an aspiring applied data science and machine learning professional. This space brings together projects I've worked on through academic research, collaborations with universities, and self-guided learning.
 
-These projects reflect my experience working with real-world data, where I've applied data science and machine learning techniques like statistical analysis, regression modelling, and time series forecasting to uncover useful insights. While much of my work has been shaped by research-driven challenges, I've also taken the initiative to explore ideas independently and build out complete workflows from data preparation to model evaluation.
+These projects reflect my experience working with real-world data, where I’ve applied data science and machine learning techniques such as statistical analysis, regression modelling, and time series forecasting to uncover meaningful insights. While much of my work has been shaped by research-driven challenges in academic settings, I’ve also taken the initiative to explore ideas independently, building complete workflows from data preparation to model evaluation. The skills I’ve developed are highly transferable and relevant to any field where data plays a central role, and I’m always eager to explore new problem spaces and continue learning through hands-on work.
 
-My background so far has been focused mostly on academic and research settings, but the skills I've developed are relevant to many areas where data plays a central role. I'm always looking to expand into new problem spaces and continue learning through hands-on work.
+Thanks again for visiting, and I hope you find something here that interests you. Whether you're a hiring manager, data team lead, or just curious, I'm glad you're here!
 
 ---
 
@@ -22,8 +22,6 @@ My background so far has been focused mostly on academic and research settings, 
 - Projects built through both collaborative research and independent study  
 - Clear, well-structured summaries that explain the thinking behind each project  
 - Documentation that aims to be understandable for both technical and non-technical readers
-
-Thanks again for visiting, and I hope you find something here that interests you. Whether you're a hiring manager, data team lead, or just curious, I'm glad you're here!
 
 ---
 
@@ -53,7 +51,7 @@ Rain-Net is an ongoing research collaboration with Sunway University, focused on
 
 - **Problem characteristics:**
   - Heavy zero-inflation: most days have 0mm rainfall  
-  - Occasional extreme events: >200–300mm, up to over 400mm
+  - Occasional extreme events: daily rainfall reaching up to over 400mm a day
   - Data sparsity: a limited dataset makes learning challenging
 - **Real-world relevance:** Mimics situations where stations lack sufficient historical data, yet forecasting remains crucial (e.g. flood/drought preparation)
 
@@ -129,8 +127,8 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ### 🧠 Methods & Models
 
-- A combination of classical and neural models were explored:
-    - **Tree-based models (best performance):**
+- A combination of gradient boosting and neural network models were explored:
+    - **Gradient boosting models (best performance):**
       - XGBoost, LightGBM, CatBoost  
       - Chosen for their robustness to sparse and small datasets
     - **Neural networks:**
@@ -140,7 +138,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 - **Hyperparameter tuning:**
   - Used Optuna with Bayesian optimisation
-    - More efficient than grid/random search once the parameter space is constrained
+    - More efficient than grid/random search once the hyperparameter spaces are constrained
 
 - **Loss function:**
   - Tweedie regression applied due to its strength in handling zero-inflated continuous data  
@@ -208,7 +206,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 ### 💡 Key Takeaways
 
 - Tailored feature engineering is critical when data is limited and noisy  
-- Tree-based models remain strong candidates in low-data contexts  
+- Tree-based models remain strong candidates in low data volume contexts  
 - SHAP allows meaningful evaluation of feature contributions, helping streamline and improve model design  
 - Evaluation metrics like NSE require careful interpretation, especially in extreme-value-heavy data
 
