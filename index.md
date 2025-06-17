@@ -21,7 +21,7 @@ My background so far has been focused mostly on academic and research settings, 
 - A set of machine learning and analytics projects, with a focus on time series forecasting and regression modeling  
 - Projects built through both collaborative research and independent study  
 - Clear, well-structured summaries that explain the thinking behind each project  
-- Code and documentation that aim to be understandable for both technical and non-technical readers
+- Documentation that aims to be understandable for both technical and non-technical readers
 
 Thanks again for visiting, and I hope you find something here that interests you. Whether you're a hiring manager, data team lead, or just curious, I'm glad you're here!
 
@@ -45,17 +45,24 @@ Click a project to jump to its section:
 
 Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here.
 
-- **Objective:** Forecast daily rainfall using data from an undisclosed station in Malaysia  
+- **Objective:** Forecast daily rainfall using data from an undisclosed station in Malaysia
+
 - **Dataset:**
   - A relatively small dataset with just a few thousand daily rainfall observations
   - Univariate: only feature is daily rainfall
+
 - **Problem characteristics:**
   - Heavy zero-inflation: most days have 0mm rainfall  
-  - Occasional extreme events: >200–300mm, up to over 400mm  
+  - Occasional extreme events: >200–300mm, up to over 400mm
   - Data sparsity: a limited dataset makes learning challenging
 - **Real-world relevance:** Mimics situations where stations lack sufficient historical data, yet forecasting remains crucial (e.g. flood/drought preparation)
 
 The aim is to build a predictive model that can deliver rainfall forecasts with useful accuracy even in constrained settings.
+
+  <figure align="center">
+  <img src="images/rain-net_overall-data.png" alt="Daily rainfall" width="500"/>
+  <figcaption>Rain-Net Figure 1: Daily rainfall data over time, showcasing intermittent but intense rainfall spikes, with several pronounced peaks suggesting periods of extreme weather events. Most days experienced little to no rainfall, highlighting the sparse yet heavy nature of the rainfall distribution. (x and y axes are removed due to confidentiality requirements)</figcaption>
+</figure>
 
 ---
 
@@ -99,12 +106,12 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 <figure align="center">
   <img src="images/rain-net_boxplot.png" alt="Boxplot of daily rainfall" width="500"/>
-  <figcaption>Rain-Net Figure 1: Boxplot showing most data points are tightly clustered near the lower end of the scale, with a long tail and many outliers indicating extreme rainfall events.</figcaption>
+  <figcaption>Rain-Net Figure 2: Boxplot showing most data points are tightly clustered near the lower end of the scale, with a long tail and many outliers indicating extreme rainfall events.</figcaption>
 </figure>
 
 <figure align="center">
   <img src="images/rain-net_violinplot.png" alt="Violinplot of daily rainfall" width="500"/>
-  <figcaption>Rain-Net Figure 2: The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
+  <figcaption>Rain-Net Figure 3: The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
 </figure>
 
 - **Trend & seasonality:**
@@ -115,7 +122,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 <figure align="center">
   <img src="images/rain-net_acf-pacf.png" alt="ACF and PACF of daily rainfall" width="500"/>
-  <figcaption>Rain-Net Figure 3: ACF and PACF plots show significant short-term autocorrelation, supporting the use of up to 7 lag days as predictive features.</figcaption>
+  <figcaption>Rain-Net Figure 4: ACF and PACF plots show significant short-term autocorrelation, supporting the use of up to 7 lag days as predictive features.</figcaption>
 </figure>
 
 ---
@@ -147,7 +154,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
    
 <figure align="center">
   <img src="images/rain-net_catboost_shap.png" alt="Catboost SHAP readings" width="500"/>
-  <figcaption>Rain-Net Figure 4: SHAP summary plot for the CatBoost model showing that recent rainfall indicators and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
+  <figcaption>Rain-Net Figure 5: SHAP summary plot for the CatBoost model showing that recent rainfall indicators and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
 </figure>
 
 - **Train-validate-test split:**
@@ -170,7 +177,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 <figure align="center">
   <img src="images/rain-net_catboost_result.PNG" alt="Catboost results" width="500"/>
-  <figcaption>Rain-Net Figure 5: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events. (x-axis and y-axis removed due to confidentiality requirements.)</figcaption>
+  <figcaption>Rain-Net Figure 6: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events. (x and y axes are removed due to confidentiality requirements)</figcaption>
 </figure>
 
 ---
