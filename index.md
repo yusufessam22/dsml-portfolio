@@ -289,7 +289,10 @@ While the overall performance still leaves room for improvement, CatBoost curren
 ⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
 
 ### 🔍 Overview
-*Coming soon...*
+
+<div style="text-align: center;">
+  <img src="images/flowtrack_cover-photo.png" alt="flowtrack_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
+</div>
 
 ### 📊 Data & Features
 *Coming soon...*
