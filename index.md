@@ -60,7 +60,7 @@ Rain-Net is an ongoing research collaboration with Sunway University, focused on
 The aim is to build a predictive model that can deliver rainfall forecasts with useful accuracy even in constrained settings.
 
   <figure align="center">
-  <img src="images/rain-net_overall-data.png" alt="Daily rainfall" width="500"/>
+  <img src="images/rain-net_graph.PNG" alt="Daily rainfall" width="500"/>
   <figcaption>Rain-Net Figure 1: Daily rainfall data over time, showcasing intermittent but intense rainfall spikes, with several pronounced peaks suggesting periods of extreme weather events. Most days experienced little to no rainfall, highlighting the sparse yet heavy nature of the rainfall distribution. (x and y axes are removed due to confidentiality requirements)</figcaption>
 </figure>
 
