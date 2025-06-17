@@ -181,6 +181,8 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ### 📈 Results & Evaluation
 
+While the overall performance still leaves room for improvement, CatBoost currently stands out as the best-performing model among those tested. It provides relatively lower error metrics across the training, validation, and test sets, and handles the general rainfall patterns better than other models. Despite a low NSE on the test set, which is expected due to data limitations and high variability, CatBoost remains the most promising model in this study so far.
+
 <figure align="center">
   <img src="images/rain-net_catboost_train-result.PNG" alt="Catboost train results" width="500"/>
   <figcaption>Rain-Net Figure 7: In the training set, CatBoost closely matches actual rainfall values across a wide range of conditions. High rainfall events are well captured, suggesting strong model fit. However, care should be taken when evaluating performance on unseen data to ensure generalisability. (x and y axes are removed due to confidentiality requirements)</figcaption>
