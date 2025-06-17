@@ -107,17 +107,22 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - Summary statistics of rainfall values  
   - Histogram showed high skewness: majority near 0mm with extreme outliers
 
+<figure align="center">
+  <img src="images/rain-net_histogram.png" alt="Histogram of daily rainfall" width="500"/>
+  <figcaption>Rain-Net Figure 2: Histogram of daily rainfall showing a strong right skew, with most days experiencing low or no rainfall and fewer days with high rainfall amounts. This highlights the typical pattern of rainfall events being infrequent but occasionally intense.</figcaption>
+</figure>
+
 - **Outlier detection:**
   - Boxplots and violin plots helped identify spread and extreme events
 
 <figure align="center">
   <img src="images/rain-net_boxplot.png" alt="Boxplot of daily rainfall" width="500"/>
-  <figcaption>Rain-Net Figure 2: Boxplot showing most data points are tightly clustered near the lower end of the scale, with a long tail and many outliers indicating extreme rainfall events.</figcaption>
+  <figcaption>Rain-Net Figure 3: Boxplot showing most data points are tightly clustered near the lower end of the scale, with a long tail and many outliers indicating extreme rainfall events.</figcaption>
 </figure>
 
 <figure align="center">
   <img src="images/rain-net_violinplot.png" alt="Violinplot of daily rainfall" width="500"/>
-  <figcaption>Rain-Net Figure 3: The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
+  <figcaption>Rain-Net Figure 4: The violin plot shows a sharp peak near 0mm, reflecting the frequency of dry or light rainfall days, with a dense but slim distribution extending towards high rainfall values.</figcaption>
 </figure>
 
 - **Trend & seasonality:**
@@ -128,7 +133,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 <figure align="center">
   <img src="images/rain-net_acf-pacf.png" alt="ACF and PACF of daily rainfall" width="500"/>
-  <figcaption>Rain-Net Figure 4: ACF and PACF plots show significant short-term autocorrelation, supporting the use of up to 7 lag days as predictive features.</figcaption>
+  <figcaption>Rain-Net Figure 5: ACF and PACF plots show significant short-term autocorrelation, supporting the use of up to 7 lag days as predictive features.</figcaption>
 </figure>
 
 ---
@@ -160,7 +165,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
    
 <figure align="center">
   <img src="images/rain-net_catboost_shap.png" alt="Catboost SHAP readings" width="500"/>
-  <figcaption>Rain-Net Figure 5: SHAP summary plot for the CatBoost model showing that the previous-day rainfall indicator, cyclical features, and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
+  <figcaption>Rain-Net Figure 6: SHAP summary plot for the CatBoost model showing that the previous-day rainfall indicator, cyclical features, and short-term temporal features (e.g. previous 1 day rainfall, 14-day moving average) have the highest influence on model predictions, while longer-term or variability-based features have lower impact.</figcaption>
 </figure>
 
 - **Train-validate-test split:**
@@ -182,8 +187,18 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
 
 <figure align="center">
-  <img src="images/rain-net_catboost_result.PNG" alt="Catboost results" width="500"/>
-  <figcaption>Rain-Net Figure 6: The model captures general rainfall patterns and timing but underestimates many extreme rainfall events. (x and y axes are removed due to confidentiality requirements)</figcaption>
+  <img src="images/rain-net_catboost_train-result.PNG" alt="Catboost train results" width="500"/>
+  <figcaption>Rain-Net Figure 7: In the training set, CatBoost closely matches actual rainfall values across a wide range of conditions. High rainfall events are well captured, suggesting strong model fit. However, care should be taken when evaluating performance on unseen data to ensure generalisability. (x and y axes are removed due to confidentiality requirements)</figcaption>
+</figure>
+
+<figure align="center">
+  <img src="images/rain-net_catboost_val-result.PNG" alt="Catboost val results" width="500"/>
+  <figcaption>Rain-Net Figure 8: On the validation set, the CatBoost model successfully follows the general pattern of rainfall, especially during low to moderate rainfall days. While major spikes are present in the actual data, the model captures their timing but often underestimates their magnitude. (x and y axes are removed due to confidentiality requirements)</figcaption>
+</figure>
+
+<figure align="center">
+  <img src="images/rain-net_catboost_result.PNG" alt="Catboost test results" width="500"/>
+  <figcaption>Rain-Net Figure 9: CatBoost rainfall forecasting on the test set shows strong alignment between predicted and actual values during dry periods, with reasonable tracking of rainfall trends overall. Peak rainfall events tend to be underpredicted, highlighting the model's difficulty in capturing extremes. (x and y axes are removed due to confidentiality requirements)</figcaption>
 </figure>
 
 ---
