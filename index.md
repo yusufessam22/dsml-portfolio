@@ -108,8 +108,8 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   - Histogram showed high skewness: majority near 0mm with extreme outliers
 
 <figure align="center">
-  <img src="images/rain-net_histogram.png" alt="Histogram of daily rainfall" width="500"/>
-  <figcaption>Rain-Net Figure 2: Histogram of daily rainfall showing a strong right skew, with most days experiencing low or no rainfall and fewer days with high rainfall amounts. This highlights the typical pattern of rainfall events being infrequent but occasionally intense.</figcaption>
+  <img src="images/rain-net_histogram.PNG" alt="Histogram of daily rainfall" width="500"/>
+  <figcaption>Rain-Net Figure 2: Histogram of daily rainfall showing a strong right skew, with most days experiencing low or no rainfall and fewer days with high rainfall amounts. This highlights the typical pattern of rainfall events being infrequent but occasionally intense. (x and y axes are removed due to confidentiality requirements)</figcaption>
 </figure>
 
 - **Outlier detection:**
