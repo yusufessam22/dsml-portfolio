@@ -181,21 +181,6 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ### 📈 Results & Evaluation
 
-- **Current best performance on train set (CatBoost):**
-  - MAE: 9.071 mm  
-  - RMSE: 15.543 mm  
-  - NSE: 0.801
-
-- **Current best performance on validation set (CatBoost):**
-  - MAE: 15.334 mm  
-  - RMSE: 30.866 mm  
-  - NSE: 0.226
-
-- **Current best performance on test set (CatBoost):**
-  - MAE: 8.633 mm  
-  - RMSE: 14.908 mm  
-  - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
-
 <figure align="center">
   <img src="images/rain-net_catboost_train-result.PNG" alt="Catboost train results" width="500"/>
   <figcaption>Rain-Net Figure 7: In the training set, CatBoost closely matches actual rainfall values across a wide range of conditions. High rainfall events are well captured, suggesting strong model fit. However, care should be taken when evaluating performance on unseen data to ensure generalisability. (x and y axes are removed due to confidentiality requirements)</figcaption>
@@ -210,6 +195,21 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
   <img src="images/rain-net_catboost_result.PNG" alt="Catboost test results" width="500"/>
   <figcaption>Rain-Net Figure 9: CatBoost rainfall forecasting on the test set shows strong alignment between predicted and actual values during dry periods, with reasonable tracking of rainfall trends overall. Peak rainfall events tend to be underpredicted, highlighting the model's difficulty in capturing extremes. (x and y axes are removed due to confidentiality requirements)</figcaption>
 </figure>
+
+- **Current best performance on train set (CatBoost):**
+  - MAE: 9.071 mm  
+  - RMSE: 15.543 mm  
+  - NSE: 0.801
+
+- **Current best performance on validation set (CatBoost):**
+  - MAE: 15.334 mm  
+  - RMSE: 30.866 mm  
+  - NSE: 0.226
+
+- **Current best performance on test set (CatBoost):**
+  - MAE: 8.633 mm  
+  - RMSE: 14.908 mm  
+  - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
 
 ---
 
