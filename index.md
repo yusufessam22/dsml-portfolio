@@ -181,7 +181,17 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ### 📈 Results & Evaluation
 
-- **Current best performance on test set:**
+- **Current best performance on train set (CatBoost):**
+  - MAE: 9.071 mm  
+  - RMSE: 15.543 mm  
+  - NSE: 0.801
+
+- **Current best performance on validation set (CatBoost):**
+  - MAE: 15.334 mm  
+  - RMSE: 30.866 mm  
+  - NSE: 0.226
+
+- **Current best performance on test set (CatBoost):**
   - MAE: 8.633 mm  
   - RMSE: 14.908 mm  
   - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
