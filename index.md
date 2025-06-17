@@ -10,6 +10,7 @@ layout: default
   <img src="images/ye_cover-photo.png" alt="ye_cover-photo" style="width: 50%; height: auto;">
 </div>
 
+
 Welcome, and thank you for stopping by my data science and machine learning portfolio! 
 
 I'm Yusuf, a part-time analytics postgraduate student at Georgia Tech and an aspiring applied data science and machine learning professional. This space brings together projects I've worked on through academic research, collaborations with universities, and self-guided learning.
@@ -48,6 +49,7 @@ Click a project to jump to its section:
 <div style="text-align: center;">
   <img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto;">
 </div>
+
 
 Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here.
 
