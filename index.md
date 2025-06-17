@@ -7,10 +7,8 @@ layout: default
 ## 👋 Introduction
 
 <div style="text-align: center;">
-  <img src="images/ye_cover-photo.png" alt="ye_cover-photo" style="width: 50%; height: auto;">
+  <img src="images/ye_cover-photo.png" alt="ye_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
-
-
 
 Welcome, and thank you for stopping by my data science and machine learning portfolio! 
 
@@ -48,10 +46,8 @@ Click a project to jump to its section:
 ### 🔍 Overview
 
 <div style="text-align: center;">
-  <img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto;">
+  <img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
-
-
 
 Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here.
 
