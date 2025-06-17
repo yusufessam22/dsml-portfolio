@@ -6,6 +6,10 @@ layout: default
 ---
 ## 👋 Introduction
 
+<div style="text-align: center;">
+  <img src="images/ye_cover-photo.png" alt="ye_cover-photo" style="width: 50%; height: auto;">
+</div>
+
 Welcome, and thank you for stopping by my data science and machine learning portfolio! 
 
 I'm Yusuf, a part-time analytics postgraduate student at Georgia Tech and an aspiring applied data science and machine learning professional. This space brings together projects I've worked on through academic research, collaborations with universities, and self-guided learning.
@@ -31,9 +35,9 @@ Click a project to jump to its section:
 
 - [💧 Rain-Net: Daily Rainfall Forecasting (2025 - ongoing)](#rain-net-daily-rainfall-forecasting-2025---ongoing)
 - [♟️ VersusAI: Monte Carlo Tree Search Variant Performance Prediction (2024)](#versusai-monte-carlo-tree-search-variant-performance-prediction-2024)
-- [🔆 SolarCast: Photovoltaic Solar Power Prediction (2022)](#solarcast-photovoltaic-solar-power-prediction-2022)
 - [🚣 FlowTrack: River Streamflow Forecasting (2022)](#flowtrack-river-streamflow-forecasting-2022)
 - [⛰️ SediSense: Suspended Sediment Load Forecasting (2022)](#sedisense-suspended-sediment-load-forecasting-2022)
+- [🔆 SolarCast: Photovoltaic Solar Power Prediction (2022)](#solarcast-photovoltaic-solar-power-prediction-2022)
 
 ---
 
@@ -41,7 +45,9 @@ Click a project to jump to its section:
 
 ### 🔍 Overview
 
-<img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto;">
+<div style="text-align: center;">
+  <img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto;">
+</div>
 
 Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here.
 
@@ -251,33 +257,6 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ---
 
-## SolarCast: Photovoltaic Solar Power Prediction (2022)
-
-⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
-
-### 🔍 Overview
-*Coming soon...*
-
-### 📊 Data & Features
-*Coming soon...*
-
-### 🧪 Exploratory Data Analysis (EDA)
-*Coming soon...*
-
-### 🧠 Methods & Models
-*Coming soon...*
-
-### 📈 Results & Evaluation
-*Coming soon...*
-
-### 🛠️ Tools & Libraries
-*Coming soon...*
-
-### 💡 Key Takeaways
-*Coming soon...*
-
----
-
 ## FlowTrack: River Streamflow Forecasting (2022)
 
 ⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
@@ -306,6 +285,31 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 ---
 
 ## SediSense: Suspended Sediment Load Forecasting (2022)
+
+⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+
+### 🔍 Overview
+*Coming soon...*
+
+### 📊 Data & Features
+*Coming soon...*
+
+### 🧪 Exploratory Data Analysis (EDA)
+*Coming soon...*
+
+### 🧠 Methods & Models
+*Coming soon...*
+
+### 📈 Results & Evaluation
+*Coming soon...*
+
+### 🛠️ Tools & Libraries
+*Coming soon...*
+
+### 💡 Key Takeaways
+*Coming soon...*
+
+## SolarCast: Photovoltaic Solar Power Prediction (2022)
 
 ⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
 
