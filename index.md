@@ -259,7 +259,7 @@ While the overall performance still leaves room for improvement, CatBoost curren
 
 ## VersusAI: Monte Carlo Tree Search Variant Performance Prediction (2024)
 
-⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+**⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!**
 
 ### 🔍 Overview
 *Coming soon...*
@@ -285,6 +285,8 @@ While the overall performance still leaves room for improvement, CatBoost curren
 ---
 
 ## FlowTrack: River Streamflow Forecasting (2025 - ongoing)
+
+**⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!**
 
 ### 🔍 Overview
 
@@ -439,7 +441,7 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
 
 ## SediSense: Suspended Sediment Load Forecasting (2022)
 
-⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+**⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!**
 
 ### 🔍 Overview
 *Coming soon...*
@@ -464,7 +466,7 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
 
 ## SolarCast: Photovoltaic Solar Power Prediction (2022)
 
-⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+**⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!**
 
 ### 🔍 Overview
 *Coming soon...*
