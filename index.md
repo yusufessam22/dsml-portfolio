@@ -286,6 +286,8 @@ While the overall performance still leaves room for improvement, CatBoost curren
 
 ## FlowTrack: River Streamflow Forecasting (2022)
 
+**⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!**
+
 ### 🔍 Overview
 
 <div style="text-align: center;">
