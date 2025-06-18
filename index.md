@@ -298,7 +298,7 @@ FlowTrack is a completed machine learning research project conducted under Unive
 
 The overall findings have been published in *Scientific Reports* by *Nature* and can be accessed [here](https://www.nature.com/articles/s41598-022-07693-4). Due to confidentiality requirements, project code and raw data will not be shared, but key methodologies and results are summarised below.
 
-- **Objective:** Forecast daily streamflow using historical streamflow data from 11 different rivers across Peninsular Malaysia
+- **Objective:** Forecast daily streamflow using historical streamflow data from 11 different rivers across Peninsular Malaysia and a single universal streamflow forecasting model
 
 - **Dataset:**
   - 11 univariate daily streamflow datasets sourced from the Malaysian Department of Irrigation and Drainage
