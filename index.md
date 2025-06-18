@@ -284,9 +284,7 @@ While the overall performance still leaves room for improvement, CatBoost curren
 
 ---
 
-## FlowTrack: River Streamflow Forecasting (2022)
-
-⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!
+## FlowTrack: River Streamflow Forecasting (2025 - ongoing)
 
 ### 🔍 Overview
 
@@ -294,23 +292,148 @@ While the overall performance still leaves room for improvement, CatBoost curren
   <img src="images/flowtrack_cover-photo.png" alt="flowtrack_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
 
+FlowTrack is an ongoing machine learning research initiative focused on predicting daily river streamflow across multiple rivers in Peninsular Malaysia. The study aims to address a critical research gap: identifying whether a single model can generalise well across different river systems.
+
+- **Objective:** Predict daily streamflow using historical streamflow data from 11 different rivers across Peninsular Malaysia
+
+- **Dataset:**
+  - 11 univariate daily streamflow datasets sourced from the Malaysian Department of Irrigation and Drainage
+  - Coverage spans various states and river basins with differing flow characteristics
+
+- **Problem characteristics:**
+  - Highly variable streamflow magnitudes across rivers
+  - Temporal and spatial heterogeneity
+  - Potential data noise and discontinuity (e.g. missing values, non-stationarity)
+
+- **Real-world relevance:**
+  - Supports flood and drought mitigation, water resource planning, hydropower operations, and pollution monitoring
+  - Promotes the idea of a resource-efficient, universal streamflow forecasting model
+
+<figure align="center">
+  <img src="images/flowtrack_graph.png" alt="Streamflow over time" width="500"/>
+  <figcaption>FlowTrack Figure 1: Streamflow time series showing variation in magnitude and fluctuation frequency across different rivers. (x and y axes are removed due to confidentiality requirements)</figcaption>
+</figure>
+
+---
+
 ### 📊 Data & Features
-*Coming soon...*
+
+The study focuses on univariate time series forecasting, where only past streamflow values are used as inputs. Based on statistical analysis and autocorrelation studies, lagged streamflow values were selected as predictors.
+
+- **Lag Features:**
+  - Lag-1, Lag-2, and Lag-3 values of streamflow identified using PACF and Pearson correlation
+  - Three input scenarios tested:
+    - Scenario 1: SF(t-1)
+    - Scenario 2: SF(t-1), SF(t-2)
+    - Scenario 3: SF(t-1), SF(t-2), SF(t-3)
+
+- **Preprocessing:**
+  - Linear interpolation used to fill missing values
+  - Feature scaling:
+    - Standardisation for SVM
+    - Normalisation for ANN and LSTM
+  - Sliding windows used to frame forecasting as a supervised learning task
+
+---
 
 ### 🧪 Exploratory Data Analysis (EDA)
-*Coming soon...*
+
+A thorough EDA was conducted to understand streamflow behaviour and inform model design:
+
+- **Descriptive statistics:**
+  - Daily streamflow values varied greatly between rivers, with some showing steady base flow and others displaying frequent spikes
+  - Summary statistics revealed skewness in multiple datasets due to infrequent but intense flow periods
+
+- **Visual patterns:**
+  - Line plots showed rivers with both consistent trends and erratic fluctuations
+  - Time series plots were used to explore temporal dynamics and outliers
+
+- **Autocorrelation analysis:**
+  - ACF and PACF plots were generated for each river
+  - Most rivers showed strong short-term autocorrelation, supporting the use of Lag-1 to Lag-3 values
+
+- **Missing data detection:**
+  - Gaps in data were identified and addressed through linear interpolation
+  - Ensured temporal continuity for supervised learning
+
+<figure align="center">
+  <img src="images/flowtrack_acf_pacf.png" alt="ACF and PACF of streamflow" width="500"/>
+  <figcaption>FlowTrack Figure 2: ACF and PACF plots highlight short-term temporal dependencies, validating the inclusion of lagged streamflow features. (x and y axes are removed due to confidentiality requirements)</figcaption>
+</figure>
+
+---
 
 ### 🧠 Methods & Models
-*Coming soon...*
+
+Three machine learning models were developed and compared:
+
+- **Support Vector Machine (SVM):**
+  - Used radial basis function (RBF) kernel
+  - Minimal tuning required; robust in high-dimensional settings
+
+- **Artificial Neural Network (ANN):**
+  - Two hidden layers with 6 neurons each
+  - ReLU activation, Adam optimiser, 100 epochs
+  - Early stopping based on validation loss
+
+- **Long Short-Term Memory (LSTM):**
+  - Two hidden layers with 50 neurons each
+  - tanh activation, sigmoid recurrent activation
+  - Dropout regularisation to reduce overfitting
+
+- **Training environment:**
+  - Python (Scikit-learn, TensorFlow)
+  - Google Colab (Jupyter notebook)
+
+- **Evaluation metrics:**
+  - MAE (Mean Absolute Error)
+  - RMSE (Root Mean Square Error)
+  - R² (Coefficient of Determination)
+  - RM (Ranking Mean): average ranking across metrics for model comparison
+
+---
 
 ### 📈 Results & Evaluation
-*Coming soon...*
+
+Among the 99 models tested across 11 river datasets, the ANN model with Scenario 3 inputs (ANN3) consistently produced the most accurate results. It ranked first in 4 out of 11 rivers and achieved the highest average RM score (3.27).
+
+<figure align="center">
+  <img src="images/flowtrack_ann3_performance.png" alt="ANN3 best performance" width="500"/>
+  <figcaption>FlowTrack Figure 3: ANN3 showed robust predictive ability across diverse streamflow profiles, capturing both low and high flow periods effectively. (x and y axes are removed due to confidentiality requirements)</figcaption>
+</figure>
+
+- **Strengths of ANN3:**
+  - Generalises well across different rivers despite variations in streamflow behaviour
+  - Outperformed SVM and LSTM in most datasets
+
+- **Model limitations:**
+  - Some rivers still showed lower predictive accuracy, particularly where streamflow variance was extreme or data quality was poor
+  - LSTM showed overfitting tendencies despite dropout, especially on smaller datasets
+
+---
 
 ### 🛠️ Tools & Libraries
-*Coming soon...*
+
+- **Data Processing:**
+  - Python, Pandas, NumPy
+
+- **Visualisation:**
+  - Matplotlib, Seaborn
+
+- **Modelling:**
+  - Scikit-learn (SVM), TensorFlow (ANN, LSTM)
+
+- **Notebook Environment:**
+  - Jupyter (on Google Colab)
+
+---
 
 ### 💡 Key Takeaways
-*Coming soon...*
+
+- ANN3 is proposed as a universal model for streamflow forecasting across Peninsular Malaysia  
+- Lag-based univariate features are effective for streamflow prediction, especially with ANN  
+- Performance can be sensitive to streamflow variability and data quality  
+- Model simplicity, such as fewer layers and neurons, can still yield strong generalisation when tuned properly
 
 ---
 
