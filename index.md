@@ -49,7 +49,7 @@ Click a project to jump to its section:
   <img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
 
-Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here.
+Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here as this is still an ongoing work and yet to be published. Project code and raw data will not be shared, but key methodologies and results are summarised below.
 
 - **Objective:** Forecast daily rainfall using data from an undisclosed station in Malaysia
 
@@ -294,9 +294,9 @@ While the overall performance still leaves room for improvement, CatBoost curren
   <img src="images/flowtrack_cover-photo.png" alt="flowtrack_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
 
-FlowTrack is a completed machine learning research project conducted under **Universiti Tenaga Nasional**, focused on forecasting daily river streamflow across multiple rivers in Peninsular Malaysia. The study addresses a critical research gap: whether a single model can generalise effectively across diverse river systems.
+FlowTrack is a completed machine learning research project conducted under Universiti Tenaga Nasional, focused on forecasting daily river streamflow across multiple rivers in Peninsular Malaysia. The study addresses a critical research gap: whether a single model can generalise effectively across diverse river systems.
 
-The overall findings have been published in *Scientific Reports* by *Nature Portfolio* and can be accessed [here](https://www.nature.com/articles/s41598-022-07693-4). Due to confidentiality requirements, project code and raw data will not be shared, but key methodologies and results are summarised below.
+The overall findings have been published in *Scientific Reports* by *Nature* and can be accessed [here](https://www.nature.com/articles/s41598-022-07693-4). Due to confidentiality requirements, project code and raw data will not be shared, but key methodologies and results are summarised below.
 
 - **Objective:** Forecast daily streamflow using historical streamflow data from 11 different rivers across Peninsular Malaysia
 
@@ -322,10 +322,23 @@ The overall findings have been published in *Scientific Reports* by *Nature Port
 
 ### 📊 Data & Features
 
-The study focuses on univariate time series forecasting, where only past streamflow values are used as inputs. Based on statistical analysis and autocorrelation studies, lagged streamflow values were selected as predictors.
+The study focuses on univariate time series forecasting, where only past streamflow values are originally available to be used as inputs. Based on statistical analysis and autocorrelation studies, lagged streamflow values were selected as predictors.
+
+- **Rivers Analysed:**
+  - Sungai Johor *(Johor)*
+  - Sungai Muda *(Kedah)*
+  - Sungai Kelantan *(Kelantan)*
+  - Sungai Melaka *(Melaka)*
+  - Sungai Kepis *(Negeri Sembilan)*
+  - Sungai Pahang *(Pahang)*
+  - Sungai Perak *(Perak)*
+  - Sungai Arau *(Perlis)*
+  - Sungai Selangor *(Selangor)*
+  - Sungai Dungun *(Terengganu)*
+  - Sungai Klang *(Federal Territory of Kuala Lumpur)*
 
 - **Lag Features:**
-  - Lag-1, Lag-2, and Lag-3 values of streamflow identified using PACF and Pearson correlation
+  - Lag-1, Lag-2, and Lag-3 values of streamflow were identified as the most relevant lags for forecasting, based on PACF and Pearson correlation analysis
   - Three input scenarios tested:
     - Scenario 1: SF(t-1)
     - Scenario 2: SF(t-1), SF(t-2)
@@ -337,6 +350,8 @@ The study focuses on univariate time series forecasting, where only past streamf
     - Standardisation for SVM
     - Normalisation for ANN and LSTM
   - Sliding windows used to frame forecasting as a supervised learning task
+
+At the time of conducting this research, the focus was kept on a minimal univariate setup using lagged features. While more advanced feature engineering might have improved model performance, such as including seasonality indicators, rolling statistics, or rainfall as an additional input, my understanding of these techniques was still in progress. Looking back, incorporating these could have offered better temporal context and generalisation, especially for rivers with highly variable flow. This is something I’ve started exploring and implementing in more recent projects.
 
 ---
 
@@ -356,9 +371,14 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
   - ACF and PACF plots were generated for each river
   - Most rivers showed strong short-term autocorrelation, supporting the use of Lag-1 to Lag-3 values
 
-- **Missing data detection:**
-  - Gaps in data were identified and addressed through linear interpolation
-  - Ensured temporal continuity for supervised learning
+- **Correlation analysis:**
+  - Pearson correlation coefficients were calculated between lagged streamflow values and the current day's streamflow
+  - Lag-1 to Lag-3 values consistently showed the strongest correlations, reinforcing their use as predictive features
+
+- **Missing data detection and imputation:**
+  - Gaps in data were identified and addressed using the `imputeTS` R package
+  - Both linear and spline interpolation methods were tested; spline interpolation occasionally introduced negative values, so linear interpolation was selected as the more reliable approach
+  - This step ensured temporal continuity, which is critical for supervised learning
 
 <figure align="center">
   <img src="images/flowtrack_acf_pacf.png" alt="ACF and PACF of streamflow" width="500"/>
@@ -369,37 +389,33 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
 
 ### 🧠 Methods & Models
 
-Three machine learning models were developed and compared:
+- **Machine Learning Models:**
+  - Three forecasting models were developed and evaluated:
+    - **Support Vector Machine (SVM):** Used a radial basis function (RBF) kernel. Minimal tuning was required, and it was generally robust in high-dimensional settings.
+    - **Artificial Neural Network (ANN):** A feedforward neural network consisting of two hidden layers with 6 neurons each, ReLU activation, and the Adam optimiser. Trained over 100 epochs with early stopping based on validation loss.
+    - **Long Short-Term Memory (LSTM):** Used two hidden layers with 50 neurons each, tanh activation, and sigmoid recurrent activation. Dropout regularisation was applied to reduce overfitting.
 
-- **Support Vector Machine (SVM):**
-  - Used radial basis function (RBF) kernel
-  - Minimal tuning required; robust in high-dimensional settings
-
-- **Artificial Neural Network (ANN):**
-  - Two hidden layers with 6 neurons each
-  - ReLU activation, Adam optimiser, 100 epochs
-  - Early stopping based on validation loss
-
-- **Long Short-Term Memory (LSTM):**
-  - Two hidden layers with 50 neurons each
-  - tanh activation, sigmoid recurrent activation
-  - Dropout regularisation to reduce overfitting
-
-- **Training environment:**
-  - Python (Scikit-learn, TensorFlow)
-  - Google Colab (Jupyter notebook)
+- **Train-validation-test split:**
+  - 80% of each river’s streamflow data was used for training and 20% for testing
+  - The training set was further split into a training and validation set, with the validation portion set to 20% of the training data
+  - The 20% validation size was selected through trial and error, as it more consistently produced the best results during training and fine-tuning
 
 - **Evaluation metrics:**
-  - MAE (Mean Absolute Error)
-  - RMSE (Root Mean Square Error)
-  - R² (Coefficient of Determination)
-  - RM (Ranking Mean): average ranking across metrics for model comparison
+  - **MAE (Mean Absolute Error):** Measures average magnitude of forecast error, giving equal weight to all errors
+  - **RMSE (Root Mean Square Error):** Penalises larger errors more heavily than MAE, making it useful for highlighting poor performance during extreme flows
+  - **R² (Coefficient of Determination):** Indicates the proportion of variance in the streamflow data that is explained by the model
+  - **RM (Ranking Mean):** Average ranking of each model across all metrics to identify the best-performing one
+
+- **Hyperparameter tuning:**
+  - A trial-and-error approach was used to find suitable hyperparameter settings that would perform reasonably across all rivers
+  - While this method yielded workable models, it was not the most efficient or optimal
+  - In hindsight, a more systematic method such as Bayesian optimisation would have likely improved model performance and generalisability
 
 ---
 
 ### 📈 Results & Evaluation
 
-Among the 99 models tested across 11 river datasets, the ANN model with Scenario 3 inputs (ANN3) consistently produced the most accurate results. It ranked first in 4 out of 11 rivers and achieved the highest average RM score (3.27).
+Among the 99 models tested across 11 river datasets, the **ANN3** model (Artificial Neural Network with Scenario 3 input lags) consistently emerged as the best performer. It ranked first in **4 out of 11 rivers** (Sungai Johor, Sungai Pahang, Sungai Arau, Sungai Selangor) and achieved the **second-best average RM score (3.27)**, just marginally behind ANN2 (3.21). Despite this, ANN3 is selected as the best overall model due to its superior ability to produce top-performing forecasts across more rivers.
 
 <figure align="center">
   <img src="images/flowtrack_ann3_performance.png" alt="ANN3 best performance" width="500"/>
@@ -407,12 +423,19 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
 </figure>
 
 - **Strengths of ANN3:**
-  - Generalises well across different rivers despite variations in streamflow behaviour
-  - Outperformed SVM and LSTM in most datasets
+  - Outperformed all other models in 4 out of 11 rivers, more than any other model
+  - Among the top in overall reliability and average performance across datasets
+  - Accurately captured sharp streamflow spikes better than other models
+
+- **Overall model insights:**
+  - **ANN** was the most dominant algorithm across the study, outperforming SVM and LSTM in 7 out of 11 datasets
+  - **Input Scenario 3** (lag-1, lag-2, lag-3) led to the highest number of top predictions, suggesting value in including three days of historical input
+  - **SVM** showed strong performance in specific rivers (e.g. Sungai Muda, Sungai Kelantan, Sungai Klang) but lacked consistency overall
+  - **LSTM** underperformed, likely due to the erratic nature of streamflow data and absence of strong temporal patterns
 
 - **Model limitations:**
-  - Some rivers still showed lower forecasting accuracy, particularly where streamflow variance was extreme or data quality was poor
-  - LSTM showed overfitting tendencies despite dropout, especially on smaller datasets
+  - Some rivers with high variability or poor data quality still resulted in lower accuracy
+  - Hyperparameter tuning via trial-and-error may have limited full model potential
 
 ---
 
@@ -425,7 +448,8 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
   - Matplotlib, Seaborn
 
 - **Modelling:**
-  - Scikit-learn (SVM), TensorFlow (ANN, LSTM)
+  - Scikit-learn (SVM)
+  - TensorFlow (ANN, LSTM)
 
 - **Notebook Environment:**
   - Jupyter (on Google Colab)
@@ -434,10 +458,20 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
 
 ### 💡 Key Takeaways
 
-- ANN3 is proposed as a universal model for streamflow forecasting across Peninsular Malaysia  
-- Lag-based univariate features are effective for streamflow forecasting, especially with ANN  
-- Performance can be sensitive to streamflow variability and data quality  
-- Model simplicity, such as fewer layers and neurons, can still yield strong generalisation when tuned properly
+- **ANN3** (ANN with 3-day lag input) is proposed as the most effective and generalisable model for streamflow forecasting across Peninsular Malaysia  
+- **Lag-based univariate features** (especially Lag-1 to Lag-3) are strong predictors, particularly when autocorrelation is present  
+- **Artificial Neural Networks** consistently outperformed SVM and LSTM models, especially in capturing sharp fluctuations in streamflow  
+- **Model simplicity** (e.g. shallow ANN architecture) can deliver strong results, highlighting the benefit of well-tuned, lightweight models for real-world applications  
+- **Scenario 3** (using three previous days of streamflow data) provided the best predictive input configuration overall  
+
+---
+
+### 🚧 Room for Improvement
+
+- **Feature Engineering:** The project focused on lag-based univariate forecasting. Incorporating additional features like seasonality indicators, rainfall data, and rolling statistics may improve performance—especially for rivers with highly variable or extreme flow.  
+- **Hyperparameter Optimisation:** A more systematic method such as **Bayesian optimisation** could improve model generalisability across rivers and avoid trial-and-error inefficiencies.  
+- **Model Architecture Exploration:** Deeper or hybrid models (e.g. CNN-LSTM or ensemble approaches) could be explored in future work to further boost accuracy and handle nonlinearities in complex rivers.  
+- **Multivariate Forecasting:** The current setup is univariate. Introducing **multivariate models** with environmental predictors (rainfall, temperature, land use) could better reflect real-world hydrological processes.  
 
 ---
 
