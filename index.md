@@ -389,22 +389,21 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
 
 ### 🧠 Methods & Models
 
-- **Machine Learning Models:**
-  - Three forecasting models were developed and evaluated:
-    - **Support Vector Machine (SVM):** Used a radial basis function (RBF) kernel. Minimal tuning was required, and it was generally robust in high-dimensional settings.
-    - **Artificial Neural Network (ANN):** A feedforward neural network consisting of two hidden layers with 6 neurons each, ReLU activation, and the Adam optimiser. Trained over 100 epochs with early stopping based on validation loss.
-    - **Long Short-Term Memory (LSTM):** Used two hidden layers with 50 neurons each, tanh activation, and sigmoid recurrent activation. Dropout regularisation was applied to reduce overfitting.
+- Three forecasting algorithms were used to develop the models:
+  - **Support Vector Machine (SVM):** Used a radial basis function (RBF) kernel. Minimal tuning was required, and it was generally robust in high-dimensional settings.
+  - **Artificial Neural Network (ANN):** A feedforward neural network consisting of two hidden layers with 6 neurons each, ReLU activation, and the Adam optimiser. Trained over 100 epochs with early stopping based on validation loss.
+  - **Long Short-Term Memory (LSTM):** Used two hidden layers with 50 neurons each, tanh activation, and sigmoid recurrent activation. Dropout regularisation was applied to reduce overfitting.
 
-- **Train-validation-test split:**
+- **Train-validate-test split:**
   - 80% of each river’s streamflow data was used for training and 20% for testing
   - The training set was further split into a training and validation set, with the validation portion set to 20% of the training data
   - The 20% validation size was selected through trial and error, as it more consistently produced the best results during training and fine-tuning
 
 - **Evaluation metrics:**
-  - **MAE (Mean Absolute Error):** Measures average magnitude of forecast error, giving equal weight to all errors
-  - **RMSE (Root Mean Square Error):** Penalises larger errors more heavily than MAE, making it useful for highlighting poor performance during extreme flows
-  - **R² (Coefficient of Determination):** Indicates the proportion of variance in the streamflow data that is explained by the model
-  - **RM (Ranking Mean):** Average ranking of each model across all metrics to identify the best-performing one
+  - MAE (Mean Absolute Error): Measures average magnitude of forecast error, giving equal weight to all errors
+  - RMSE (Root Mean Square Error): Penalises larger errors more heavily than MAE, making it useful for highlighting poor performance during extreme flows
+  - R² (Coefficient of Determination): Indicates the proportion of variance in the streamflow data that is explained by the model
+  - RM (Ranking Mean): Average ranking of each model across all metrics to identify the best-performing one
 
 - **Hyperparameter tuning:**
   - A trial-and-error approach was used to find suitable hyperparameter settings that would perform reasonably across all rivers
@@ -415,7 +414,7 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
 
 ### 📈 Results & Evaluation
 
-Among the 99 models tested across 11 river datasets, the **ANN3** model (Artificial Neural Network with Scenario 3 input lags) consistently emerged as the best performer. It ranked first in **4 out of 11 rivers** (Sungai Johor, Sungai Pahang, Sungai Arau, Sungai Selangor) and achieved the **second-best average RM score (3.27)**, just marginally behind ANN2 (3.21). Despite this, ANN3 is selected as the best overall model due to its superior ability to produce top-performing forecasts across more rivers.
+Among the 99 models tested across 11 river datasets, the ANN3 model (Artificial Neural Network with Scenario 3 input lags) consistently emerged as the best performer. It ranked first in 4 out of 11 rivers (Sungai Johor, Sungai Pahang, Sungai Arau, Sungai Selangor) and achieved the second-best average RM score (3.27), just marginally behind ANN2 (3.21). Despite this, ANN3 is selected as the best overall model due to its superior ability to produce top-performing forecasts across more rivers.
 
 <figure align="center">
   <img src="images/flowtrack_ann3_performance.png" alt="ANN3 best performance" width="500"/>
@@ -427,11 +426,11 @@ Among the 99 models tested across 11 river datasets, the **ANN3** model (Artific
   - Among the top in overall reliability and average performance across datasets
   - Accurately captured sharp streamflow spikes better than other models
 
-- **Overall model insights:**
+- **Overall insights:**
   - **ANN** was the most dominant algorithm across the study, outperforming SVM and LSTM in 7 out of 11 datasets
   - **Input Scenario 3** (lag-1, lag-2, lag-3) led to the highest number of top predictions, suggesting value in including three days of historical input
   - **SVM** showed strong performance in specific rivers (e.g. Sungai Muda, Sungai Kelantan, Sungai Klang) but lacked consistency overall
-  - **LSTM** underperformed, likely due to the erratic nature of streamflow data and absence of strong temporal patterns
+  - **LSTM** underperformed, likely due to the limited length of training sequences, high variance in streamflow data, and absence of multivariate inputs that typically enhance LSTM performance
 
 - **Model limitations:**
   - Some rivers with high variability or poor data quality still resulted in lower accuracy
@@ -469,9 +468,9 @@ Among the 99 models tested across 11 river datasets, the **ANN3** model (Artific
 ### 🚧 Room for Improvement
 
 - **Feature Engineering:** The project focused on lag-based univariate forecasting. Incorporating additional features like seasonality indicators, rainfall data, and rolling statistics may improve performance—especially for rivers with highly variable or extreme flow.  
-- **Hyperparameter Optimisation:** A more systematic method such as **Bayesian optimisation** could improve model generalisability across rivers and avoid trial-and-error inefficiencies.  
+- **Hyperparameter Optimisation:** A more systematic method such as Bayesian optimisation could improve model generalisability across rivers and avoid trial-and-error inefficiencies.  
 - **Model Architecture Exploration:** Deeper or hybrid models (e.g. CNN-LSTM or ensemble approaches) could be explored in future work to further boost accuracy and handle nonlinearities in complex rivers.  
-- **Multivariate Forecasting:** The current setup is univariate. Introducing **multivariate models** with environmental predictors (rainfall, temperature, land use) could better reflect real-world hydrological processes.  
+- **Multivariate Forecasting:** The current setup is univariate. Introducing multivariate models with environmental predictors (rainfall, temperature, land use) could better reflect real-world hydrological processes.
 
 ---
 
