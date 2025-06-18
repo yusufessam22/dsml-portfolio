@@ -284,9 +284,7 @@ While the overall performance still leaves room for improvement, CatBoost curren
 
 ---
 
-## FlowTrack: River Streamflow Forecasting (2025 - ongoing)
-
-**⚙️ This project is in progress! I'm piecing it together and digging through my old work like a data archaeologist. Just need a bit more time to get everything organised and properly displayed here. In the meantime, feel free to explore my work on the Rain-Net project!**
+## FlowTrack: River Streamflow Forecasting (2022)
 
 ### 🔍 Overview
 
@@ -294,9 +292,11 @@ While the overall performance still leaves room for improvement, CatBoost curren
   <img src="images/flowtrack_cover-photo.png" alt="flowtrack_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
 
-FlowTrack is an ongoing machine learning research initiative focused on predicting daily river streamflow across multiple rivers in Peninsular Malaysia. The study aims to address a critical research gap: identifying whether a single model can generalise well across different river systems.
+FlowTrack is a completed machine learning research project conducted under **Universiti Tenaga Nasional**, focused on forecasting daily river streamflow across multiple rivers in Peninsular Malaysia. The study addresses a critical research gap: whether a single model can generalise effectively across diverse river systems.
 
-- **Objective:** Predict daily streamflow using historical streamflow data from 11 different rivers across Peninsular Malaysia
+The overall findings have been published in *Scientific Reports* by *Nature Portfolio* and can be accessed [here](https://www.nature.com/articles/s41598-022-07693-4). Due to confidentiality requirements, project code and raw data will not be shared, but key methodologies and results are summarised below.
+
+- **Objective:** Forecast daily streamflow using historical streamflow data from 11 different rivers across Peninsular Malaysia
 
 - **Dataset:**
   - 11 univariate daily streamflow datasets sourced from the Malaysian Department of Irrigation and Drainage
@@ -401,7 +401,7 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
 
 <figure align="center">
   <img src="images/flowtrack_ann3_performance.png" alt="ANN3 best performance" width="500"/>
-  <figcaption>FlowTrack Figure 3: ANN3 showed robust predictive ability across diverse streamflow profiles, capturing both low and high flow periods effectively. (x and y axes are removed due to confidentiality requirements)</figcaption>
+  <figcaption>FlowTrack Figure 3: ANN3 showed robust forecasting ability across diverse streamflow profiles, capturing both low and high flow periods effectively. (x and y axes are removed due to confidentiality requirements)</figcaption>
 </figure>
 
 - **Strengths of ANN3:**
@@ -409,7 +409,7 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
   - Outperformed SVM and LSTM in most datasets
 
 - **Model limitations:**
-  - Some rivers still showed lower predictive accuracy, particularly where streamflow variance was extreme or data quality was poor
+  - Some rivers still showed lower forecasting accuracy, particularly where streamflow variance was extreme or data quality was poor
   - LSTM showed overfitting tendencies despite dropout, especially on smaller datasets
 
 ---
@@ -433,7 +433,7 @@ Among the 99 models tested across 11 river datasets, the ANN model with Scenario
 ### 💡 Key Takeaways
 
 - ANN3 is proposed as a universal model for streamflow forecasting across Peninsular Malaysia  
-- Lag-based univariate features are effective for streamflow prediction, especially with ANN  
+- Lag-based univariate features are effective for streamflow forecasting, especially with ANN  
 - Performance can be sensitive to streamflow variability and data quality  
 - Model simplicity, such as fewer layers and neurons, can still yield strong generalisation when tuned properly
 
