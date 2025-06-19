@@ -417,6 +417,13 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
   - 80% of each river’s streamflow data was used for training and 20% for testing
   - The training set was further split into a training and validation set, with the validation portion set to 20% of the training data
   - The 20% validation size was selected through trial and error, as it more consistently produced the best results during training and fine-tuning
+ 
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="margin-bottom: 8px; font-size: 16px;">
+    FlowTrack Table 4: Partitioning of river streamflow datasets into training and testing periods for each river. The split varies by river and reflects long-term daily data availability, however the ratios remain the same across all rivers (80% training and 20% testing).
+  </div>
+  <img src="images/flowtrack_data-partitioning.PNG" alt="Data partitioning" width="500"/>
+</div>
 
 - **Evaluation metrics:**
   - MAE (Mean Absolute Error): Measures average magnitude of forecast error, giving equal weight to all errors
@@ -435,10 +442,42 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
 
 Among the 99 models tested across 11 river datasets, the ANN3 model (Artificial Neural Network with Scenario 3 input lags) consistently emerged as the best performer. It ranked first in 4 out of 11 rivers (Sungai Johor, Sungai Pahang, Sungai Arau, Sungai Selangor) and achieved the second-best average RM score (3.27), just marginally behind ANN2 (3.21). Despite this, ANN3 is selected as the best overall model due to its superior ability to produce top-performing forecasts across more rivers.
 
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="margin-bottom: 8px; font-size: 16px;">
+    FlowTrack Table 5: RM scores for all models across each river dataset. ANN3 achieves the best RM in 4 datasets, with ANN models dominating overall rankings.
+  </div>
+  <img src="images/flowtrack_rm-table.PNG" alt="RM table" width="500"/>
+</div>
+
 <figure align="center">
-  <img src="images/flowtrack_ann3_performance.png" alt="ANN3 best performance" width="500"/>
-  <figcaption>FlowTrack Figure 3: ANN3 showed robust forecasting ability across diverse streamflow profiles, capturing both low and high flow periods effectively. (x and y axes are removed due to confidentiality requirements)</figcaption>
+  <img src="images/flowtrack_rm-barchart.PNG" alt="RM bar chart" width="500"/>
+  <figcaption>FlowTrack Figure 3: Average RM scores for each model and scenario, highlighting ANN2 and ANN3 as top-performing models across river datasets. </figcaption>
 </figure>
+
+
+<figure align="center">
+  <img src="images/flowtrack_sg-johor-results.PNG" alt="Sg Johor graph" width="500"/>
+  <figcaption>FlowTrack Figure 4: Forecast comparison on Sungai Johor test set. ANN3 captures sharp spikes more effectively than SVR and LSTM.</figcaption>
+</figure>
+
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="margin-bottom: 8px; font-size: 16px;">
+    FlowTrack Table 6: Performance of all models on Sungai Johor. ANN3 achieves top scores across all evaluation metrics.
+  </div>
+  <img src="images/flowtrack_sg-johor-results-table.PNG" alt="Sg Johor table results" width="500"/>
+</div>
+
+<figure align="center">
+  <img src="images/flowtrack_sg-pahang-results.PNG" alt="Sg Pahang graph" width="500"/>
+  <figcaption>FlowTrack Figure 5: Actual vs predicted streamflow for Sungai Pahang using the best models from each algorithm. ANN3 closely follows actual peaks and troughs.</figcaption>
+</figure>
+
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="margin-bottom: 8px; font-size: 16px;">
+    FlowTrack Table 7: Evaluation results for Sungai Pahang dataset. ANN3 again demonstrates leading performance across MAE, RMSE, and R².
+  </div>
+  <img src="images/flowtrack_sg-pahang-results-table.PNG" alt="Sg Pahang table results" width="500"/>
+</div>
 
 - **Strengths of ANN3:**
   - Outperformed all other models in 4 out of 11 rivers, more than any other model
@@ -446,8 +485,8 @@ Among the 99 models tested across 11 river datasets, the ANN3 model (Artificial 
   - Accurately captured sharp streamflow spikes better than other models
 
 - **Overall insights:**
-  - **ANN** was the most dominant algorithm across the study, outperforming SVM and LSTM in 7 out of 11 datasets
-  - **Input Scenario 3** (lag-1, lag-2, lag-3) led to the highest number of top predictions, suggesting value in including three days of historical input
+  - **ANN** was the most dominant algorithm across the study, outperforming SVM and LSTM in 7 out of 11 rivers
+  - **Input Scenario 3** (lag-1, lag-2, lag-3) led to the highest number of top predictions (8 out of 11 rivers), suggesting value in including three days of historical input
   - **SVM** showed strong performance in specific rivers (e.g. Sungai Muda, Sungai Kelantan, Sungai Klang) but lacked consistency overall
   - **LSTM** underperformed, likely due to the limited length of training sequences, high variance in streamflow data, and absence of multivariate inputs that typically enhance LSTM performance
 
