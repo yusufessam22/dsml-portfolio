@@ -311,10 +311,13 @@ The overall findings have been published in *Scientific Reports* by *Nature* and
   - Supports flood and drought mitigation, water resource planning, hydropower operations, and pollution monitoring
   - Promotes the idea of a resource-efficient, universal streamflow forecasting model
 
-<figure align="center">
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="font-size: 14px; font-style: italic; margin-bottom: 8px;">
+    FlowTrack Figure 1: Geographical and administrative information of river stations used in this study, including coordinates, station IDs, and data coverage period.
+  </div>
   <img src="images/flowtrack_river-info.PNG" alt="River info" width="500"/>
-  <figcaption>FlowTrack Figure 1: Geographical and administrative information of river stations used in this study, including coordinates, station IDs, and data coverage period</figcaption>
-</figure>
+</div>
+
 
 ---
 
@@ -361,27 +364,40 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
   - Daily streamflow values varied greatly between rivers, with some showing steady base flow and others displaying frequent spikes
   - Summary statistics revealed skewness in multiple datasets due to infrequent but intense flow periods
 
+<figure align="center">
+  <img src="images/flowtrack_summary-statistics.PNG" alt="Summary statistics" width="500"/>
+  <figcaption>FlowTrack Figure 2: Summary statistics for each river’s streamflow data, highlighting variability in mean, spread, and extreme values across river systems.</figcaption>
+</figure>
+
 - **Visual patterns:**
   - Line plots showed rivers with both consistent trends and erratic fluctuations
   - Time series plots were used to explore temporal dynamics and outliers
 
-- **Autocorrelation analysis:**
-  - ACF and PACF plots were generated for each river
+- **Partial autocorrelation analysis:**
+  - PACF plots were generated for each river
   - Most rivers showed strong short-term autocorrelation, supporting the use of Lag-1 to Lag-3 values
+ 
+<figure align="center">
+  <img src="images/flowtrack_pacf.PNG" alt="River Pacf" width="500"/>
+  <figcaption>FlowTrack Figure 3: Partial autocorrelation plots for all rivers indicate strong short-term dependencies, particularly at lag-1, lag-2, and lag-3, supporting the chosen input scenarios.</figcaption>
+</figure>
 
 - **Correlation analysis:**
   - Pearson correlation coefficients were calculated between lagged streamflow values and the current day's streamflow
   - Lag-1 to Lag-3 values consistently showed the strongest correlations, reinforcing their use as predictive features
 
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="font-size: 14px; font-style: italic; margin-bottom: 8px;">
+    FlowTrack Figure 3: Partial autocorrelation plots for all rivers indicate strong short-term dependencies, particularly at lag-1, lag-2, and lag-3, supporting the chosen input scenarios.
+  </div>
+  <img src="images/flowtrack_pacf.PNG" alt="River Pacf" width="500"/>
+</div>
+
+
 - **Missing data detection and imputation:**
   - Gaps in data were identified and addressed using the `imputeTS` R package
   - Both linear and spline interpolation methods were tested; spline interpolation occasionally introduced negative values, so linear interpolation was selected as the more reliable approach
   - This step ensured temporal continuity, which is critical for supervised learning
-
-<figure align="center">
-  <img src="images/flowtrack_acf_pacf.png" alt="ACF and PACF of streamflow" width="500"/>
-  <figcaption>FlowTrack Figure 2: ACF and PACF plots highlight short-term temporal dependencies, validating the inclusion of lagged streamflow features. (x and y axes are removed due to confidentiality requirements)</figcaption>
-</figure>
 
 ---
 
