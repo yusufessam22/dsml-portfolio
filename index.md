@@ -312,12 +312,11 @@ The overall findings have been published in *Scientific Reports* by *Nature* and
   - Promotes the idea of a resource-efficient, universal streamflow forecasting model
 
 <div style="text-align: center; margin-bottom: 20px;">
-  <div style="font-size: 14px; font-style: italic; margin-bottom: 8px;">
-    FlowTrack Figure 1: Geographical and administrative information of river stations used in this study, including coordinates, station IDs, and data coverage period.
+  <div style="margin-bottom: 8px; font-size: 16px;">
+    FlowTrack Table 1: Geographical and administrative information of river stations used in this study, including coordinates, station IDs, and data coverage period.
   </div>
   <img src="images/flowtrack_river-info.PNG" alt="River info" width="500"/>
 </div>
-
 
 ---
 
@@ -364,10 +363,12 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
   - Daily streamflow values varied greatly between rivers, with some showing steady base flow and others displaying frequent spikes
   - Summary statistics revealed skewness in multiple datasets due to infrequent but intense flow periods
 
-<figure align="center">
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="margin-bottom: 8px; font-size: 16px;">
+    FlowTrack Table 2: Summary statistics for each river’s streamflow data, highlighting variability in mean, spread, and extreme values across river systems.
+  </div>
   <img src="images/flowtrack_summary-statistics.PNG" alt="Summary statistics" width="500"/>
-  <figcaption>FlowTrack Figure 2: Summary statistics for each river’s streamflow data, highlighting variability in mean, spread, and extreme values across river systems.</figcaption>
-</figure>
+</div>
 
 - **Visual patterns:**
   - Line plots showed rivers with both consistent trends and erratic fluctuations
@@ -379,7 +380,7 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
  
 <figure align="center">
   <img src="images/flowtrack_pacf.PNG" alt="River Pacf" width="500"/>
-  <figcaption>FlowTrack Figure 3: Partial autocorrelation plots for all rivers indicate strong short-term dependencies, particularly at lag-1, lag-2, and lag-3, supporting the chosen input scenarios.</figcaption>
+  <figcaption>FlowTrack Figure 1: Partial autocorrelation plots for all rivers indicate strong short-term dependencies, particularly at lag-1, lag-2, and lag-3, supporting the chosen input scenarios.</figcaption>
 </figure>
 
 - **Correlation analysis:**
@@ -387,12 +388,11 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
   - Lag-1 to Lag-3 values consistently showed the strongest correlations, reinforcing their use as predictive features
 
 <div style="text-align: center; margin-bottom: 20px;">
-  <div style="font-size: 14px; font-style: italic; margin-bottom: 8px;">
-    FlowTrack Figure 3: Partial autocorrelation plots for all rivers indicate strong short-term dependencies, particularly at lag-1, lag-2, and lag-3, supporting the chosen input scenarios.
+  <div style="margin-bottom: 8px; font-size: 16px;">
+    FlowTrack Table 3: Partial autocorrelation plots for all rivers indicate strong short-term dependencies, particularly at lag-1, lag-2, and lag-3, supporting the chosen input scenarios.
   </div>
   <img src="images/flowtrack_pacf.PNG" alt="River Pacf" width="500"/>
 </div>
-
 
 - **Missing data detection and imputation:**
   - Gaps in data were identified and addressed using the `imputeTS` R package
