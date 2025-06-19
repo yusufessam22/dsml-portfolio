@@ -389,15 +389,20 @@ A thorough EDA was conducted to understand streamflow behaviour and inform model
 
 <div style="text-align: center; margin-bottom: 20px;">
   <div style="margin-bottom: 8px; font-size: 16px;">
-    FlowTrack Table 3: Partial autocorrelation plots for all rivers indicate strong short-term dependencies, particularly at lag-1, lag-2, and lag-3, supporting the chosen input scenarios.
+    FlowTrack Table 3: Pearson correlation coefficients showing strong relationships between current and lagged streamflow values across selected rivers, justifying the use of lags as input features.
   </div>
-  <img src="images/flowtrack_pacf.PNG" alt="River Pacf" width="500"/>
+  <img src="images/flowtrack_pearson-correlation.PNG" alt="Pearson correlation" width="500"/>
 </div>
 
 - **Missing data detection and imputation:**
   - Gaps in data were identified and addressed using the `imputeTS` R package
   - Both linear and spline interpolation methods were tested; spline interpolation occasionally introduced negative values, so linear interpolation was selected as the more reliable approach
   - This step ensured temporal continuity, which is critical for supervised learning
+
+<figure align="center">
+  <img src="images/flowtrack_sample-imputation.PNG" alt="Sample imputation" width="500"/>
+  <figcaption>FlowTrack Figure 2: Example of missing value imputation using linear interpolation for Sungai Johor. Red lines indicate imputed values where known streamflow data (blue) was unavailable.</figcaption>
+</figure>
 
 ---
 
