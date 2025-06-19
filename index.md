@@ -457,7 +457,7 @@ Among the 99 models tested across 11 river datasets, the ANN3 model (Artificial 
 
 <figure align="center">
   <img src="images/flowtrack_sg-johor-results.PNG" alt="Sg Johor graph" width="500"/>
-  <figcaption>FlowTrack Figure 4: Forecast comparison on Sungai Johor test set. ANN3 captures sharp spikes more effectively than SVR and LSTM.</figcaption>
+  <figcaption>FlowTrack Figure 4: Forecast comparison on Sungai Johor test set. ANN3 captures sharp spikes more effectively than SVM and LSTM.</figcaption>
 </figure>
 
 <div style="text-align: center; margin-bottom: 20px;">
