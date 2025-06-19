@@ -314,8 +314,8 @@ The overall findings have been published in *Scientific Reports* by *Nature* and
   - Promotes the idea of a resource-efficient, universal streamflow forecasting model
 
 <figure align="center">
-  <img src="images/flowtrack_graph.png" alt="Streamflow over time" width="500"/>
-  <figcaption>FlowTrack Figure 1: Streamflow time series showing variation in magnitude and fluctuation frequency across different rivers. (x and y axes are removed due to confidentiality requirements)</figcaption>
+  <img src="images/flowtrack_river-info.PNG" alt="River info" width="500"/>
+  <figcaption>FlowTrack Figure 1: Geographical and administrative information of river stations used in this study, including coordinates, station IDs, and data coverage period</figcaption>
 </figure>
 
 ---
