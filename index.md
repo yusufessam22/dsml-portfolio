@@ -516,10 +516,10 @@ Among the 99 models tested across 11 river datasets, the ANN3 model (Artificial 
 ### 💡 Key Takeaways
 
 - **ANN3** (ANN with 3-day lag input) is proposed as the most effective and generalisable model for streamflow forecasting across Peninsular Malaysia  
-- **Lag-based univariate features** (especially Lag-1 to Lag-3) are strong predictors, particularly when autocorrelation is present  
-- **Artificial Neural Networks** consistently outperformed SVM and LSTM models, especially in capturing sharp fluctuations in streamflow  
+- **Lag-based univariate features** (especially Lag-1 to Lag-3) are strong predictors, particularly when partial autocorrelation is present
+- - **Scenario 3** (using three previous days of streamflow data) provided the best predictive input configuration overall 
+- **ANN** models consistently outperformed SVM and LSTM models, especially in capturing sharp fluctuations in streamflow  
 - **Model simplicity** (e.g. shallow ANN architecture) can deliver strong results, highlighting the benefit of well-tuned, lightweight models for real-world applications  
-- **Scenario 3** (using three previous days of streamflow data) provided the best predictive input configuration overall  
 
 ---
 
