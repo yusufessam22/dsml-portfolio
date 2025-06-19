@@ -292,7 +292,7 @@ While the overall performance still leaves room for improvement, CatBoost curren
   <img src="images/flowtrack_cover-photo.png" alt="flowtrack_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
 
-FlowTrack is a completed machine learning research project conducted under Universiti Tenaga Nasional, focused on forecasting daily river streamflow across multiple rivers in Peninsular Malaysia. The study addresses a critical research gap: whether a single model can generalise effectively across diverse river systems.
+FlowTrack is a completed machine learning research project conducted under a collaboration between Universiti Tunku Abdul Rahman and Universiti Tenaga Nasional, focused on forecasting daily river streamflow across multiple rivers in Peninsular Malaysia. The study addresses a critical research gap: whether a single model can generalise effectively across diverse river systems.
 
 The overall findings have been published in *Scientific Reports* by *Nature* and can be accessed [here](https://www.nature.com/articles/s41598-022-07693-4). Due to confidentiality requirements, project code and raw data will not be shared, but key methodologies and results are summarised below.
 
