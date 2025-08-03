@@ -49,7 +49,7 @@ Click a project to jump to its section:
   <img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
 
-Rain-Net is an ongoing research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here as this is still an ongoing work and yet to be published. Project code and raw data will not be shared, but key methodologies and results are summarised below.
+Rain-Net is a research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here this work is yet to be officially published. Project code and raw data will not be shared, but key methodologies and results are summarised below.
 
 - **Objective:** Forecast daily rainfall using data from an undisclosed station in Malaysia
 
@@ -181,7 +181,7 @@ A detailed EDA was conducted to understand the dataset's structure and behaviour
 
 ### 📈 Results & Evaluation
 
-While the overall performance still leaves room for improvement, CatBoost currently stands out as the best-performing model among those tested. It provides relatively lower error metrics across the training, validation, and test sets, and handles the general rainfall patterns better than other models. Despite a low NSE on the test set, which is expected due to data limitations and high variability, CatBoost remains the most promising model in this study so far.
+CatBoost stands out as the best-performing model among those tested. It provides relatively lower error metrics across the training, validation, and test sets, and handles the general rainfall patterns better than other models. Despite a low NSE on the test set, which is expected due to data limitations and high variability, CatBoost remains the most promising model in this study so far.
 
 <figure align="center">
   <img src="images/rain-net_catboost_train-result.PNG" alt="Catboost train results" width="500"/>
@@ -198,17 +198,17 @@ While the overall performance still leaves room for improvement, CatBoost curren
   <figcaption>Rain-Net Figure 9: CatBoost rainfall forecasting on the test set shows strong alignment between predicted and actual values during dry periods, with reasonable tracking of rainfall trends overall. Peak rainfall events tend to be underpredicted, highlighting the model's difficulty in capturing extremes. (x and y axes are removed due to confidentiality requirements)</figcaption>
 </figure>
 
-- **Current best performance on train set (CatBoost):**
+- **Best performance on train set (CatBoost):**
   - MAE: 9.071 mm  
   - RMSE: 15.543 mm  
   - NSE: 0.801
 
-- **Current best performance on validation set (CatBoost):**
+- **Best performance on validation set (CatBoost):**
   - MAE: 15.334 mm  
   - RMSE: 30.866 mm  
   - NSE: 0.226
 
-- **Current best performance on test set (CatBoost):**
+- **Best performance on test set (CatBoost):**
   - MAE: 8.633 mm  
   - RMSE: 14.908 mm  
   - NSE: 0.133 (Low, but expected due to data limitations and high variance from extremes)
@@ -247,7 +247,7 @@ While the overall performance still leaves room for improvement, CatBoost curren
 
 ---
 
-### 🔄 Ongoing Work
+### 🔄 Possible Improvements in the Future
 
 - **Log transformation:**  
   Log-transformed targets may reduce skewness and variance, stabilising model training and improving extreme-value handling
