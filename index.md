@@ -41,7 +41,7 @@ Click a project to jump to its section:
 
 ---
 
-## Rain-Net: Daily Rainfall Forecasting (2025 - ongoing)
+## Rain-Net: Daily Rainfall Forecasting (2025)
 
 ### 🔍 Overview
 
