@@ -49,7 +49,7 @@ Click a project to jump to its section:
   <img src="images/rain-net_cover-photo.png" alt="rain-net_cover-photo" style="width: 50%; height: auto; margin-bottom: 20px;">
 </div>
 
-Rain-Net is a research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here this work is yet to be officially published. Project code and raw data will not be shared, but key methodologies and results are summarised below.
+Rain-Net is a research collaboration with Sunway University, focused on developing a machine learning framework to forecast daily rainfall. Due to confidentiality, only selected aspects of the project are shared here as this work is yet to be officially published. Project code and raw data will not be shared, but key methodologies and results are summarised below.
 
 - **Objective:** Forecast daily rainfall using data from an undisclosed station in Malaysia
 
